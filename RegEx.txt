@@ -1,0 +1,88 @@
+Sprawdzanie wyrazeń regularnych online:
+https://regex101.com/
+
+
+Każdy znak, oprócz znaków specjalnych, określa sam siebie, np. c oznacza znak c.
+Kolejne symbole oznaczają, że w łańcuchu muszą wystąpić dokładnie te symbole w dokładnie takiej samej kolejności, np. xv oznacza, że łańcuch musi składać się ze znaku ax poprzedzającego znak v.
+--------------------------------------------------------------------------------------------------------
+^ - początek wiersza $ - koniec wiersza (zezwala na zakończenie wyrażenia przejściem do nowej linii \n.)
+/ogranicznik wyrażenia/ lub #także ogranicznik wyrażenia# ew. ~też ogranicznik~
+--------------------------------------------------------------------------------------------------------
+. (kropka) - dowolny znak z wyjątkiem znaku nowego wiersza
+[ ] - jeden dowolny znak ze znaków pomiędzy nawiasami, np. [abc] a,b lub c
+[^...] - jeden dowolny znak z wyjątkiem tych w nawiasie (negacja zbioru). Jeśli ^ występuje na początku wyrażenia to oznacza początek wiersza
+[a-e] - jeden znak z przedziału od a do e
+[A-Z] - jedna dowolna wielka litera od A do Z 
+[a-zA-Z] - jedna dowolna wielka lub mała litera z przedziału A-z
+[0-9] - dowolna cyfra od 0 do 9
+( ) - grupa symboli do późniejszego wykorzystania (przechwytywanie, odwołania wsteczne)
+| - odpowiednik słowa lub, oznacza wystąpienie jednego z podanych wyrażeń: a|b|c oznacza a lub b lub c.
+* - 0 (zero) lub więcej wystąpień poprzedzającego wyrażenia [abc]* – 0 lub więcej znaków ze zbioru abc
++ - 1 (jedno) lub więcej wystąpień poprzedzającego wyrażenia
+? - najwyżej jedno wystąpienie (może być 0) poprzedzającego wyrażenia
+
+znaki specjalne jako zwykłe poprzedzane są backslashem np.:
+\. – to kropka a nie dowolny znak,
+\.+ – to jedna kropka lub więcej.
+\$ \^ \* \[ \( \] \) \- itp.
+
+Rozszerzenia:
+\d - dowolna cyfra (czyli [0-9])
+\D - dowolny znak niebędący cyfrą (czyli [^0-9])
+\s - dowolny znak biały (np. spacja, tabulator, klasa znaków: [ \n\t\r\f])
+\S - dowolny znak niebędący znakiem białym (klasa znaków: [^ \n\t\r\f])
+\w - dowolny znak wyrazu (klasa znaków: [a-zA-Z0-9_])
+\W - dowolny znak niebędący znakiem wyrazu (klasa znaków: [^a-zA-Z0-9_])
+\n - nowa linia
+\t - tabulator
+\r - powrót karetki
+\f - rozpoczęcie nowej strony
+[:digit:] - dowolna cyfra
+[:alpha:] - dowolna litera
+[:alnum:] - dowolna cyfra i litera
+{} - kwantyfikator zasięgu
+{N} - dokładnie N wystąpień, np. [1-8]{3} - trzy cyfry z przedziału od 1 do 8. Jedna cyfra: /^[0-9]{1}$/
+{N,} - co najmniej N wystąpień
+{,M} - maksymalnie M wystąpień
+{N,M} - od N do M wystąpień
+
+Tryby dopasowania (można łączyć: /w+/iu):
+i - ignoruje wielkość liter w wyrażeniu
+m - wykonuje dopasowanie dla wielu linii
+s - kropka oznacza również znak nowej linii
+u - stosuje UTF-8
+U - domyślne kwantyfikatory nie są zachłanne (styka 1 dopasowanie)
+D - wymusza interpretację $ jako bezwzględnego końca wyrażenia (możliwość dodania \n w niektórych przypadkach może być luką w bezpieczeństwie skryptu)
+
+$regex = '/(\w+)([0-9])=\1\2/'; // 1 lub więcej wystąpień dowolnego znaku wyrazu +
+// cyfra z zakresu 0-9 = (przechwycenie 1 - znaki wyrazu)(przechwycenie 2 - cyfra)
+$regex = '/^ab$/'; // stosuj ' zamiast "
+
+preg_match, preg_match_all
+preg_match($pattern, $subject, $matches);
+zwraca 1 jeśli jest dopasowanie, 0 brak dopasowania, false - błąd
+if(preg_match_all($regex, $text, $matches) == 2) { - all wysz. wszystkie
+
+preg_grep – wyszukuje elementy tablicy pasujące do wzoru.
+$fl_array = preg_grep("/^(\d+)?\.\d+$/", $array);
+
+preg_replace – wyszukuje i zamienia wystąpienia wzorca podanym tekstem.
+preg_replace($pattern, $replacement, $string)
+
+preg_split – dzieli łańcuch znaków przy użyciu wyrażenia regularnego oraz
+zwraca tablicę z wyodrębnionymi częściami.
+$keywords = preg_split("/[\s,]+/", "hypertext lang, programming");
+
+----------------------------------------------------------------------------
+wyrażenia regularne w PHP (składnia Pearl - szybsza): http://php.net/manual/en/ref.pcre.php
+http://php.net/manual/en/function.preg-match.php
+
+kod pocztowy PL:
+^([0-9]{2})(-[0-9]{3})?$ lub [0-9][0-9]-[0-9][0-9][0-9] ew. [\d][\d]-[\d][\d][\d]
+
+
+
+
+
+
+
