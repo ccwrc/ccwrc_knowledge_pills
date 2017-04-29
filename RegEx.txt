@@ -15,16 +15,17 @@ Kolejne symbole oznaczają, że w łańcuchu muszą wystąpić dokładnie te sym
 [A-Z] - jedna dowolna wielka litera od A do Z 
 [a-zA-Z] - jedna dowolna wielka lub mała litera z przedziału A-z
 [0-9] - dowolna cyfra od 0 do 9
-( ) - grupa symboli do późniejszego wykorzystania (przechwytywanie, odwołania wsteczne)
+( ) - grupa symboli (tzw. atom) do późniejszego wykorzystania (przechwytywanie, odwołania wsteczne)
 | - odpowiednik słowa lub, oznacza wystąpienie jednego z podanych wyrażeń: a|b|c oznacza a lub b lub c.
 * - 0 (zero) lub więcej wystąpień poprzedzającego wyrażenia [abc]* – 0 lub więcej znaków ze zbioru abc
 + - 1 (jedno) lub więcej wystąpień poprzedzającego wyrażenia
 ? - najwyżej jedno wystąpienie (może być 0) poprzedzającego wyrażenia
+inne znaczenie pytajnika: .* - kwantyfikator zwykły, .*? - kwantyfikator leniwy
 
 znaki specjalne jako zwykłe poprzedzane są backslashem np.:
 \. – to kropka a nie dowolny znak,
 \.+ – to jedna kropka lub więcej.
-\$ \^ \* \[ \( \] \) \- itp.
+\$ \^ \* \[ \( \] \) \- \@ itp. UWAGA: dla backslash prawidłowo to: \\\\
 
 Rozszerzenia:
 \d - dowolna cyfra (czyli [0-9])
@@ -46,7 +47,7 @@ Rozszerzenia:
 {,M} - maksymalnie M wystąpień
 {N,M} - od N do M wystąpień
 
-Tryby dopasowania (można łączyć: /w+/iu):
+Tryby dopasowania (można łączyć, np.: /w+/iu lub /^([a-r]{2})(-[0-9]{3})?$/suD):
 i - ignoruje wielkość liter w wyrażeniu
 m - wykonuje dopasowanie dla wielu linii
 s - kropka oznacza również znak nowej linii
@@ -76,9 +77,25 @@ $keywords = preg_split("/[\s,]+/", "hypertext lang, programming");
 ----------------------------------------------------------------------------
 wyrażenia regularne w PHP (składnia Pearl - szybsza): http://php.net/manual/en/ref.pcre.php
 http://php.net/manual/en/function.preg-match.php
+----------------------------------------------------------------------------
+przykłady praktyczne RegEx
 
 kod pocztowy PL:
 ^([0-9]{2})(-[0-9]{3})?$ lub [0-9][0-9]-[0-9][0-9][0-9] ew. [\d][\d]-[\d][\d][\d]
+
+- w trakcie uzupełniania
+
+----------------------------------------------------------------------------
+linki RegEx
+
+krótki regex sprawdzający poprawność adresu E-mail (RFC):
+http://www.ex-parrot.com/pdw/Mail-RFC822-Address.html
+
+ciekawy przykład konwersji daty w formie tekstowej na cyfrową:
+https://pl.wikibooks.org/wiki/PHP/Podstawy_wyra%C5%BCe%C5%84_regularnych
+
+operatory z podziałem na lewostronne i prawostronne:
+https://www.p-programowanie.pl/php/budowanie-wyrazen-regularnych-php/
 
 
 
