@@ -1,0 +1,48 @@
+Pełna dokumentacja:
+https://twig.sensiolabs.org/doc/2.x/
+
+
+
+W akcji kontrolera można na dwa sposoby wskazać, jaki szablon ma być użyty:
+- użyć metody render() należącej do bazowej klasy kontrolera
+return $this->render('hello/greetings/index.html.twig', array('name' => $name));
+- użyć adnotacji @Template().
+/** @Template("SensioBlogBundle:Post:show.html.twig")
+i w funkcji: return array('post' => $post);
+
+ściezka widoku w TWIGu: {{ _self.getTemplateName() }}
+
+{% extends "::base.html.twig" %} - dziedziczenie
+{% block title %}Witaj w widoku {% endblock %} - zastapienie title
+{{ parent() }} - treść z bloku nadrzędnego szablonu :)
+
+{{ foo.bar }} - wyświetlanie atrybutu
+{{ foo2['bar'] }} - Wyświetlenie zawartości komórki o kluczu bar z tablicy foo2
+{{ var|escape|title }} - filtrów może być wiele
+{% filter upper %} This text becomes uppercase {% endfilter %}
+
+załączanie innego szablonu:
+{% for post in posts%}
+{{ include('post/show.html.twig',{ 'post': post})}}
+{% endfor %}
+
+W bardziej skomplikowanym przypadku możemy w widoku wywołać akcje kontrolera.
+BundleName:ControllerName:Action
+{{ render(controller('AppBundle:Article:recentArticles', {'max': 3 }))}
+--------------------------LINKI-------path(),--------url().-------------
+<a href="{{ path('article_show', {'id': article.id}) }}">tytuł</a>
+dynamiczny link:
+<img src="{{ asset("bundles/coderslab/images/default_user.jpg") }}">
+
+
+{% for x in 1..n %}
+    {# Moja zajefajna petla #}
+    {{ x }} -
+
+    {% if phrase is defined %}
+        {{ phrase }}
+    {% else %}
+        Symfony jest fajne :)
+    {% endif %}
+    <br />
+{% endfor %}
