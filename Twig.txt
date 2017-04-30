@@ -1,48 +1,59 @@
 Pełna dokumentacja:
 https://twig.sensiolabs.org/doc/2.x/
 
+Uwaga: po kazdym rozpoczęciu {{ {% {# i przed zakończeniem musi być spacja.
+{{ wyrażenie }} - wyświetlanie wartości wyrażenia
+{% wyrażenie %} - wykonywanie wyrażeń (warunki logiczne, pętle, bloki, itp.)
+{# komentarz #} - blok komentarza
+----------------------------------------------------------------------------
 
+{{ dump() }} - taki phpowy var_dump()
+{{ _self.getTemplateName() }} - ścieżka widoku (dump ścieżki widoku)
+{% extends "::base.html.twig" %} - przykład dziedziczenia widoku
+{% block title %} Witaj w widoku {% endblock %} - zastapienie (nadpisanie) bloku title
+{{ parent() }} - wklejenie treści z bloku szablonu nadrzędnego, np. {% block title %} {{ parent() }} tu nowy tekst {% endblock %}
+{{ foo.bar }} - wyświetlanie atrybutu
+{{ foo2['bar'] }} - Wyświetlenie zawartości komórki o kluczu bar z tablicy foo2
+{{ var|escape|title }} - można dodawać wiele filtrów do zmiennej var
+{% filter upper %} ten tekst wyświetli się WIELKIMI LITERAMI {% endfilter %}
+---
+BundleName:ControllerName:Action - można w widoku wywołać akcje kontrolera
+{{ render(controller('AppBundle:Article:recentArticles', {'max': 3 })) }}
+---
+{% for key, val in array %} - działa jak foreach w PHP
+{{ key display }} blabla {{ val display }}
+{% else %} - else (jeśli nie ma nic w tablicy) w pętli for, super sprawa
+{% endfor %} - zakończenie pętli for
+---
+{% for post in posts%} - przykład załączenia innego szablonu w pętli for
+{{ include('post/show.html.twig',{ 'post': post})}}
+{% endfor %}
+---
+{% for x in 1..n %} - przykład pętli for
+    {# Moja petla #} - komentarz
+    {{ x }} - wyświetlenie wartości x
+    {% if phrase is defined %} - jeśli fraza została przesłana
+        {{ phrase }}
+    {% else %} 
+        Twig jest OK.
+    {% endif %}
+{% endfor %}
+---
 
 W akcji kontrolera można na dwa sposoby wskazać, jaki szablon ma być użyty:
 - użyć metody render() należącej do bazowej klasy kontrolera
-return $this->render('hello/greetings/index.html.twig', array('name' => $name));
+return $this->render('hello/greetings/index.html.twig', ['name' => $name]);
 - użyć adnotacji @Template().
 /** @Template("SensioBlogBundle:Post:show.html.twig")
-i w funkcji: return array('post' => $post);
+i w funkcji: return ['post' => $post];
 
-ściezka widoku w TWIGu: {{ _self.getTemplateName() }}
 
-{% extends "::base.html.twig" %} - dziedziczenie
-{% block title %}Witaj w widoku {% endblock %} - zastapienie title
-{{ parent() }} - treść z bloku nadrzędnego szablonu :)
 
-{{ foo.bar }} - wyświetlanie atrybutu
-{{ foo2['bar'] }} - Wyświetlenie zawartości komórki o kluczu bar z tablicy foo2
-{{ var|escape|title }} - filtrów może być wiele
-{% filter upper %} This text becomes uppercase {% endfilter %}
 
-załączanie innego szablonu:
-{% for post in posts%}
-{{ include('post/show.html.twig',{ 'post': post})}}
-{% endfor %}
-
-W bardziej skomplikowanym przypadku możemy w widoku wywołać akcje kontrolera.
-BundleName:ControllerName:Action
-{{ render(controller('AppBundle:Article:recentArticles', {'max': 3 }))}
 --------------------------LINKI-------path(),--------url().-------------
 <a href="{{ path('article_show', {'id': article.id}) }}">tytuł</a>
 dynamiczny link:
-<img src="{{ asset("bundles/coderslab/images/default_user.jpg") }}">
+<img src="{{ asset("bundles/cl/images/default_user.jpg") }}">
 
 
-{% for x in 1..n %}
-    {# Moja zajefajna petla #}
-    {{ x }} -
 
-    {% if phrase is defined %}
-        {{ phrase }}
-    {% else %}
-        Symfony jest fajne :)
-    {% endif %}
-    <br />
-{% endfor %}
