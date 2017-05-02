@@ -1,0 +1,4 @@
+oficjalna dokumentacja:
+https://dev.mysql.com/
+https://dev.mysql.com/doc/
+
