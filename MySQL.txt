@@ -1,4 +1,47 @@
 oficjalna dokumentacja:
-https://dev.mysql.com/
 https://dev.mysql.com/doc/
 
+AND
+  // SELECT column_name(s) FROM table_name WHERE column_1 = value_1 AND column_2 = value_2;
+  // wybierz kolumny z tabeli, gdzie warunek1 i warunek2 muszą być spełnione
+  // używany po WHERE, przeciwieństwem jest operator OR (lub)
+AS
+  // przykład i opis
+AVG
+ // przyklad i opis
+
+
+
+
+
+
+----------------------------------------------------
+nazewnictwo
+
+tabele w bazie: 
+- nigdy i nigdzie nie stosować spacji i znaków typowych dla języka polskiego,
+- nazwy tabel tylko małymi literami,
+- nie korzystać z camelCase, dla nazw złożonych stosować podkreślenie, np. "compound_name",
+- nazwy powinny być opisowe i w miarę możliwości krótkie, najlepiej jeśli tabela nazywa się tak samo jak klasa,
+- nie stosować znaków specjalnych ani słów zarezerwowanych przez bazę danych
+
+kolumny w tabeli:
+- do nazywania stosować rzeczowniki w liczbie pojedynczej,
+- nigdy i nigdzie nie stosować spacji i znaków typowych dla języka polskiego,
+- nazwy kolumn tylko małymi literami,
+- nie korzystać z camelCase, znaków specjalnych, ąśę, itp.
+
+----------------------------------------------------
+linki
+
+wszystkie JOINy na jednych schemacie:
+https://images86.fotosik.pl/144/eea5cea03e104bf7.png
+
+opis najczęściej używanych komend SQL:
+https://www.codecademy.com/articles/sql-commands?r=master
+
+w3schools:
+https://www.w3schools.com/sql/sql_functions.asp
+
+budowanie baz online:
+https://dbdesigner.net/
