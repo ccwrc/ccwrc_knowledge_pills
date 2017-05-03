@@ -1,14 +1,22 @@
 oficjalna dokumentacja:
 https://dev.mysql.com/doc/
+----------------------------------------------------
 
+ALTER TABLE
+  // ALTER TABLE table_name ADD column datatype;
+  // zmiana tabeli, np. dodanie kolumny
 AND
   // SELECT column_name(s) FROM table_name WHERE column_1 = value_1 AND column_2 = value_2;
   // wybierz kolumny z tabeli, gdzie warunek1 i warunek2 muszą być spełnione
   // używany po WHERE, przeciwieństwem jest operator OR (lub)
 AS
-  // przykład i opis
-AVG
- // przyklad i opis
+  // SELECT column_name AS 'Alias' FROM table_name;
+  // wybierz kolumnę jako Alias z tabeli (kolumna jest zwracana pod nową nazwą)
+AVG (average)
+  // SELECT AVG(column_name) FROM table_name;
+  // zwraca średnią wartość dla kolumny numerycznej
+
+
 
 
 
