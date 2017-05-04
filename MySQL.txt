@@ -5,7 +5,7 @@ https://dev.mysql.com/doc/
 ALTER TABLE
   // ALTER TABLE table_name ADD column datatype;
   // zmiana tabeli, np. dodanie kolumny
-AND
+AND (używany po WHERE)
   // SELECT column_name(s) FROM table_name WHERE column_1 = value_1 AND column_2 = value_2;
   // wybierz kolumny z tabeli, gdzie warunek1 i warunek2 muszą być spełnione
   // używany po WHERE, przeciwieństwem jest operator OR (lub)
@@ -15,12 +15,41 @@ AS
 AVG (average)
   // SELECT AVG(column_name) FROM table_name;
   // zwraca średnią wartość dla kolumny numerycznej
-
-
-
-
-
-
+BETWEEN (używany po WHERE)
+  // SELECT column_name(s) FROM table_name WHERE column_name BETWEEN value_1 AND value_2;
+  // wybierz z tabeli rekordy, które zawierają się pomiędzy wartością1 a wartością2
+  // wartościami moga być numery, stringi, daty (BLOB nie przejdzie)
+COUNT
+  // SELECT COUNT(column_name) FROM table_name;
+  // zlicza liczbę wierszy w kolumnie, które posiadają wartość (czyli wszystkie oprócz NULL)
+  // zwraca liczbę całkowitą
+CREATE TABLE
+  // CREATE TABLE table_name (column_1 datatype, column_2 datatype, column_3 datatype);
+DELETE
+  // UWAGA: upewnij się, że backup bazy jest zrobiony, zawsze używaj słowa WHERE
+  // UWAGA: najpierw przetestuj komendę z SELECT zamiast DELETE, LIMIT 1 też jest przydatne
+  // UWAGA: do zwykłej obsługi bazy powinien być stworzony użytkownik, który nie ma uprawnień do usuwania
+  // DELETE FROM table_name WHERE some_column = some_value;
+  // usuń wiersze z tabeli, gdzie spełniony jest warunek
+GROUP BY
+  // SELECT COUNT(*) FROM table_name GROUP BY column_name;
+  // grupuj według kolumny. Zwraca wiersze wypełnione, identyczne grupuje
+JOIN // INNER JOIN
+  // SELECT column_name(s) FROM table_1 JOIN table_2 ON table_1.column_name = table_2.column_name;
+  // łaczy wiersze z różnych tabel jeśli warunek jest prawdziwy
+  OUTER JOIN
+  // SELECT column_name(s) FROM table_1 LEFT JOIN table_2 ON table_1.column_name = table_2.column_name;
+  // zwrócony jest każdy wiersz z lewej tabeli, jeśli warunek nie jest spełniony to dołączone
+  // wiersze z prawej są wypełnione NULL. Analogicznie działa RIGHT JOIN
+  // Pomoc graficzna: https://images86.fotosik.pl/144/eea5cea03e104bf7.png
+INSERT
+  // INSERT INTO table_name (column_1, column_2, column_3) VALUES (value_1, 'value_2', value_3);
+  // zwykłe wstawienie nowego wiersza do tabeli
+LIKE (używany po WHERE)
+  // SELECT column_name(s) FROM table_name WHERE column_name LIKE pattern;
+LIMIT
+  // SELECT column_name(s) FROM table_name LIMIT 13;
+  // zwróć maksymalnie 13 rekordów
 
 
 ----------------------------------------------------
