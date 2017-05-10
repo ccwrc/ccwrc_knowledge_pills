@@ -12,6 +12,10 @@ AND (używany po WHERE)
 AS
   // SELECT column_name AS 'Alias' FROM table_name;
   // wybierz kolumnę jako Alias z tabeli (kolumna jest zwracana pod nową nazwą)
+ASC (ascending)
+  // SELECT * FROM tweet ORDER BY tweet_date ASC
+  // uporządkuj według -> rosnąco (alfabetycznie lub liczbowo)
+  // przeciwieństwem jest DESC
 AVG (average)
   // SELECT AVG(column_name) FROM table_name;
   // zwraca średnią wartość dla kolumny numerycznej
@@ -23,6 +27,7 @@ COUNT
   // SELECT COUNT(column_name) FROM table_name;
   // zlicza liczbę wierszy w kolumnie, które posiadają wartość (czyli wszystkie oprócz NULL)
   // zwraca liczbę całkowitą
+  // SELECT COUNT(comment_tweet_id) AS count_comments FROM comment WHERE comment_tweet_id = 2
 CREATE TABLE
   // CREATE TABLE table_name (column_1 datatype, column_2 datatype, column_3 datatype);
 DELETE
@@ -31,6 +36,10 @@ DELETE
   // UWAGA: do zwykłej obsługi bazy powinien być stworzony użytkownik, który nie ma uprawnień do usuwania
   // DELETE FROM table_name WHERE some_column = some_value;
   // usuń wiersze z tabeli, gdzie spełniony jest warunek
+DESC (descending)
+  // SELECT * FROM tweet ORDER BY tweet_description DESC LIMIT 300
+  // wybierz wszystko, uporządkuj wg. malejąco, max 300 rekordów (alfabetycznie lub liczbowo)
+  // przeciwieństwem jest ASC
 GROUP BY
   // SELECT COUNT(*) FROM table_name GROUP BY column_name;
   // grupuj według kolumny. Zwraca wiersze wypełnione, identyczne grupuje
@@ -50,6 +59,27 @@ LIKE (używany po WHERE)
 LIMIT
   // SELECT column_name(s) FROM table_name LIMIT 13;
   // zwróć maksymalnie 13 rekordów
+MAX
+  // SELECT MAX(column_name) FROM table_name;
+  // przyjmuje nazwę kolumny jako argument i zwraca największą wartość w tej kolumnie
+MIN
+  // SELECT MIN(column_name) FROM table_name;
+  // przyjmuje nazwę kolumny jako argument i zwraca najmniejszą wartość w tej kolumnie
+OR (używany po WHERE)
+  // SELECT column_name FROM table_name WHERE column_name = value_1 OR column_name = value_2;
+  // wybierz kolumny z tabeli, gdzie spełniony jest warunek1 lub warunek2
+  // używany po WHERE, przeciwieństwem jest operator AND
+ORDER BY
+  // SELECT column_name FROM table_name ORDER BY column_name ASC|DESC;
+  // uporządkuj wg. kolumny rosnąco/malejąco
+ROUND
+  // SELECT ROUND(column_name, 3) FROM table_name;
+  // zaokrąglenie z dokładnością do 3 miejsc po przecinku
+  // SELECT ROUND(-5.99549, 2) ->wynik-> -6.00
+  // SELECT ROUND(593149, -3) ->wynik-> 593000
+
+
+
 
 
 ----------------------------------------------------
@@ -82,3 +112,20 @@ https://www.w3schools.com/sql/sql_functions.asp
 
 budowanie baz online:
 https://dbdesigner.net/
+
+bindowanie parametrów, MySQLi vs PDO:
+https://code.tutsplus.com/tutorials/pdo-vs-mysqli-which-should-you-use--net-24059
+
+PDO:
+https://pl.wikibooks.org/wiki/PHP/Biblioteka_PDO
+http://php.net/manual/en/book.pdo.php
+
+zaokrąglanie liczb w MySQL (bardzo dokładny opis):
+https://www.miotk.eu/mysql-jak-zaokraglic-liczby-w-bazie-mysql.html#poczatek-strony
+
+
+
+
+
+
+

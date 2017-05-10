@@ -184,10 +184,15 @@ https://www.p-programowanie.pl/php/budowanie-wyrazen-regularnych-php/
 
 cheatsheet:
 http://phpmajster.blogspot.com/search/label/CHEATSHEETS_REGEXP
+https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/
 
 (prawie) najdokładniejszy opis znaków specjalnych:
 https://pl.wikibooks.org/wiki/AutoIt/Wyra%C5%BCenia_regularne
 
+[UWAGA] ataki na aplikację przez niewłaściwie napisane regex:
+https://sekurak.pl/atak-dos-na-aplikacje-przez-wyrazenia-regularne/
+http://php.net/manual/en/function.set-time-limit.php
+http://php.net/manual/en/info.configuration.php#ini.max-execution-time
 
 
 
