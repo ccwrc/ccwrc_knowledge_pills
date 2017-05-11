@@ -36,10 +36,18 @@ DELETE
   // UWAGA: do zwykłej obsługi bazy powinien być stworzony użytkownik, który nie ma uprawnień do usuwania
   // DELETE FROM table_name WHERE some_column = some_value;
   // usuń wiersze z tabeli, gdzie spełniony jest warunek
+  // DELETE FROM table_name;
+  // usuń WSZYSTKIE wiersze z tabeli
 DESC (descending)
   // SELECT * FROM tweet ORDER BY tweet_description DESC LIMIT 300
   // wybierz wszystko, uporządkuj wg. malejąco, max 300 rekordów (alfabetycznie lub liczbowo)
   // przeciwieństwem jest ASC
+DROP (UWAGA: komenda niebezpieczna)
+  // DROP DATABASE db_name; 
+  // DROP TABLE table_name;
+  // usuń bazę, tabelę
+  // ALTER TABLE table_name DROP INDEX index_name; 
+  // usunięcie indeksu tabeli
 GROUP BY
   // SELECT COUNT(*) FROM table_name GROUP BY column_name;
   // grupuj według kolumny. Zwraca wiersze wypełnione, identyczne grupuje
@@ -122,6 +130,9 @@ http://php.net/manual/en/book.pdo.php
 
 zaokrąglanie liczb w MySQL (bardzo dokładny opis):
 https://www.miotk.eu/mysql-jak-zaokraglic-liczby-w-bazie-mysql.html#poczatek-strony
+
+podstawy MySQL:
+http://www.bazy-danych.net/
 
 
 

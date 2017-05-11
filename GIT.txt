@@ -1,0 +1,16 @@
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------
+linki
+
+1/4: http://itcraftsman.pl/kontrola-wersji-z-git-cz-1-wstep/
+2/4: http://itcraftsman.pl/kontrola-wersji-z-git-cz-2-instalacja-konfiguracja-i-pierwszy-commit/
+3/4: http://itcraftsman.pl/kontrola-wersji-z-git-cz-3-cykl-zycia-plikow/
+4/4: http://itcraftsman.pl/kontrola-wersji-z-git-cz-4-zdalne-repozytoria/
