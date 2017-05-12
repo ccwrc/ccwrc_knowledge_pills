@@ -1,8 +1,24 @@
 
 
-
-
-
+git init
+  // inicjalizacja projektu w folderze (stworzenie nowego repozytorium git)
+git status (komenda nieinwazyjna)
+  // sprawdzanie statusu, pokazywane są informacje o: gałęzi na której pracujemy (branch), nieśledzonych jeszcze plikach (untracked
+  // files), itp. 
+git add filename
+  // dodanie pojedynczego pliku do śledzenia, jeśli chcemy dodać wszystkie to: git add . (git add spacja kropka enter)
+git diff filename
+  // sprawdzanie różnic w śledzonym pliku
+git commit -m (git commit witch message)
+  // git commit -m "your message"
+  // dodawanie zmian do repoztorium wraz z komentarzem (wiadomością)
+git log
+  // sprawdzanie historii zmian w repozytorium, podawane są: identyfikator commita, autor zmian, data i treść wprowadzonej wiadomości
+  // klawisz "q" - wyjście z logu
+git show HEAD
+  // wyświetla historię zmian jak w git log + pokazuje zmiany w plikach - usunięte wiersze na czerwono, dodane na zielono
+git checkout HEAD filename
+  // przywraca zmiany konkretnego pliku z ostatniego commita
 
 
 
@@ -14,3 +30,12 @@ linki
 2/4: http://itcraftsman.pl/kontrola-wersji-z-git-cz-2-instalacja-konfiguracja-i-pierwszy-commit/
 3/4: http://itcraftsman.pl/kontrola-wersji-z-git-cz-3-cykl-zycia-plikow/
 4/4: http://itcraftsman.pl/kontrola-wersji-z-git-cz-4-zdalne-repozytoria/
+
+szybki kurs:
+https://www.codecademy.com/learn/learn-git
+
+kolejny kurs:
+https://www.udacity.com/course/how-to-use-git-and-github--ud775
+
+prosty przewodnik:
+https://rogerdudler.github.io/git-guide/
