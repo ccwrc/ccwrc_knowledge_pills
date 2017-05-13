@@ -1,3 +1,19 @@
+oficjalna strona i dokumentacja: https://git-scm.com/
+Instalacja (Linux Ubuntu): w wierszu poleceń: sudo apt-get install git
+
+
+Konfiguracja:
+  git config --global user.name "Imię Nazwisko lub Nick"
+  git config --global user.email "twojmail@gmail.elo"
+  git config --global core.editor nano // zmiana edytora dla terminala (VIM jest domyślny - niezalecany dla początkującego ;)
+
+
+git config --list
+  // wyświetlenie pozycji, które podaliśmy podczas konfiguracji
+git --version
+  // sprawdzanie wersji
+git --help
+  // podstawowa pomoc z opisem komend
 
 
 git init
@@ -7,21 +23,32 @@ git status (komenda nieinwazyjna)
   // files), itp. 
 git add filename
   // dodanie pojedynczego pliku do śledzenia, jeśli chcemy dodać wszystkie to: git add . (git add spacja kropka enter)
+  // można także dodać kilka plików, nazwy oddziala się spacją, np.: git add filename_1 filename_2
+  // można także dodać wszystkie pliki o konkretnym rozszerzeniu, np.: git add *.php
 git diff filename
   // sprawdzanie różnic w śledzonym pliku
 git commit -m (git commit witch message)
   // git commit -m "your message"
   // dodawanie zmian do repoztorium wraz z komentarzem (wiadomością)
+  // git commit -a -m "your message" - zastępuje 2 komendy: git add i git commit, ale dotyczy tylko już śledzonych plików
 git log
   // sprawdzanie historii zmian w repozytorium, podawane są: identyfikator commita, autor zmian, data i treść wprowadzonej wiadomości
   // klawisz "q" - wyjście z logu
-git show HEAD
+git show HEAD (HEAD - najświeższe zmiany z lokalnego repozytorium)
   // wyświetla historię zmian jak w git log + pokazuje zmiany w plikach - usunięte wiersze na czerwono, dodane na zielono
 git checkout HEAD filename
   // przywraca zmiany konkretnego pliku z ostatniego commita
+git reset HEAD filename
+  // wyłaczenie pliku ze śledzenia (nie bedzie brany pod uwagę przy commicie)
+git reset SHA (7 pierwszych znaków)
+  // przykład SHA: 5d692065cf51a2f50ea8e7b19b5a7ae512f633ba
+  // użycie komendy przy powyższym SHA: git reset 5d69206 (SHA jest wyświetlane przy komendzie git log)
+  // komenda "przewija" projekt do punktu, który wprowadzimy (inaczej: jest to zwykłe cofnięcie zmian)
+  // właśnie dlatego dobre komentarze przy commitach są niezbędne
+  // Uwaga: "powrót do przyszłości" nie jest możliwy
 
 
-
+cdn.
 
 ----------------------------------------------------------
 linki
@@ -31,7 +58,7 @@ linki
 3/4: http://itcraftsman.pl/kontrola-wersji-z-git-cz-3-cykl-zycia-plikow/
 4/4: http://itcraftsman.pl/kontrola-wersji-z-git-cz-4-zdalne-repozytoria/
 
-szybki kurs:
+szybki, darmowy kurs:
 https://www.codecademy.com/learn/learn-git
 
 kolejny kurs:
@@ -39,3 +66,12 @@ https://www.udacity.com/course/how-to-use-git-and-github--ud775
 
 prosty przewodnik:
 https://rogerdudler.github.io/git-guide/
+
+pro git - jeśli chcesz sie zagłębić w temat:
+https://git-scm.com/book/en/v2
+
+free ebook:
+https://www.git-tower.com/learn/git/ebook
+
+
+

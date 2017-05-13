@@ -85,7 +85,10 @@ ROUND
   // zaokrąglenie z dokładnością do 3 miejsc po przecinku
   // SELECT ROUND(-5.99549, 2) ->wynik-> -6.00
   // SELECT ROUND(593149, -3) ->wynik-> 593000
-
+SELECT
+  // SELECT column_name FROM table_name;
+  // każde pobieranie danych z bazy zaczyna sie od SELECT
+  // SELECT COUNT(message_id) AS new_messages FROM message WHERE receiver_id =1 && read = 0 && receiver_visible = 0;
 
 
 
