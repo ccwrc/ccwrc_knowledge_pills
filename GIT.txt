@@ -46,6 +46,21 @@ git reset SHA (7 pierwszych znaków)
   // komenda "przewija" projekt do punktu, który wprowadzimy (inaczej: jest to zwykłe cofnięcie zmian)
   // właśnie dlatego dobre komentarze przy commitach są niezbędne
   // Uwaga: "powrót do przyszłości" nie jest możliwy
+git branch
+  // sprawdzanie gałęzi na której się znajdujesz (czyli odnogi/wersji projektu)
+  // aktywna gałąź w spisie jest oznaczana * (gwiazdką)
+git branch name_new_branch (nazwa nie może mieć białych znaków)
+  // tworzenie nowej gałęzi w projekcie
+git checkout branch_name
+  // przełączanie się pomiędzy gałęziami (główną jest master)
+git merge branch_name
+  // przyłączenie gałęzi pobocznej do gałęzi głównej
+  // wcześniej należy przełączyć się na gałąź główną (git checkout master)
+  // Uwaga: jeśli wcześniej dopisałeś cos w gałęzi master będzie konflikt - w pliku git zaznaczy co zostało dopisane
+  // w gałęziach, trzeba będzie wykasować niechciane zmiany, wszystkie komentarze gita i zapisać plik
+git branch -d branch_name
+  // wykasowanie zbędnej już gałęzi
+
 
 
 cdn.
