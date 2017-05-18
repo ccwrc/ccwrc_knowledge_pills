@@ -8,12 +8,25 @@ Konfiguracja:
   git config --global core.editor nano // zmiana edytora dla terminala (VIM jest domyślny - niezalecany dla początkującego ;)
 
 
+.gitignore:
+  // Jeśli nie chcesz śledzić konkretnego pliku/folderu to do projektu dodajesz plik o nazwie .gitignore
+  // screen: https://images85.fotosik.pl/172/2fb88b4ada2662b6.png
+  // zasady formatowania .gitignore:
+     - linia zaczynająca się od znaku # jest komentarzem
+     - można stosować wyrażenia przetwarzania katalogów zgodnie z tymi z konsoli (np. znak * oznacza dowolny znak)
+     - dodanie ostatniego znaku „/” oznacza wskazanie katalogu
+     - istnieje możliwość negowania definicji poprzez wstawienie znaku „!” na początku
+
+
 git config --list
-  // wyświetlenie pozycji, które podaliśmy podczas konfiguracji
+  // wyświetlenie pozycji, które podaliśmy podczas konfiguracji (nick, mail, edytor...)
+  // screen: https://images86.fotosik.pl/172/046f209e13606a9b.png
 git --version
   // sprawdzanie wersji
+  // screen: https://images86.fotosik.pl/172/9fd22b141d80e55d.png
 git --help
   // podstawowa pomoc z opisem komend
+  // screen: https://images86.fotosik.pl/172/9fd22b141d80e55d.png
 
 
 git init
@@ -21,12 +34,21 @@ git init
 git status (komenda nieinwazyjna)
   // sprawdzanie statusu, pokazywane są informacje o: gałęzi na której pracujemy (branch), nieśledzonych jeszcze plikach (untracked
   // files), itp. 
+  // scree: https://images85.fotosik.pl/172/4aa0d92998a3ba42.png
 git add filename
   // dodanie pojedynczego pliku do śledzenia, jeśli chcemy dodać wszystkie to: git add . (git add spacja kropka enter)
   // można także dodać kilka plików, nazwy oddziala się spacją, np.: git add filename_1 filename_2
   // można także dodać wszystkie pliki o konkretnym rozszerzeniu, np.: git add *.php
+git rm file_name
+  // UWAGA: trwałe usunięcie pliku ze śledzenia i z dysku twardego!
+  // operacja zatwierdzana po commicie (git commit -m "comment")
+git rm --cached file_name
+  // usunięcie pliku z kontroli wersji, ale z pozostawieniem go na dysku
+  // operacja zatwierdzana po commicie (git commit -m "comment")
 git diff filename
   // sprawdzanie różnic w śledzonym pliku
+git mv name1.php new_name.php
+  // zmiana nazwy pliku
 git commit -m (git commit witch message)
   // git commit -m "your message"
   // dodawanie zmian do repoztorium wraz z komentarzem (wiadomością)
