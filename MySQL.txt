@@ -89,9 +89,22 @@ SELECT
   // SELECT column_name FROM table_name;
   // każde pobieranie danych z bazy zaczyna sie od SELECT
   // SELECT COUNT(message_id) AS new_messages FROM message WHERE receiver_id =1 && read = 0 && receiver_visible = 0;
+SELECT DISTINCT
+  // SELECT DISTINCT column_name FROM table_name;
+  // zwaraca unikalne (nie powtarzające się) wartości dla wybranej kolumny
+SUM
+  // SELECT SUM(column_name) FROM table_name;
+  // zwraca sumę wartości z wybranej kolumny
+UPDATE
+  // UWAGA: upewnij się, że backup bazy jest zrobiony, zawsze używaj słowa WHERE
+  // UWAGA: najpierw przetestuj komendę z SELECT zamiast UPDATE
+  // UPDATE table_name SET some_column = some_value WHERE some_column = some_value;
+  // jeśli nie użyjesz wyrażenia WHERE zaktualizowane zostaną wszystkie wiersze w tabeli
+WHERE
+  // SELECT column_name(s) FROM table_name WHERE column_name operator value;
+  // 
 
-
-
+cdn. 
 
 ----------------------------------------------------
 nazewnictwo

@@ -1,5 +1,7 @@
 oficjalna strona i dokumentacja: https://git-scm.com/
 Instalacja (Linux Ubuntu): w wierszu poleceń: sudo apt-get install git
+Konfiguracja dla Maca i Windows:
+https://www.codecademy.com/articles/git-setup
 
 
 Konfiguracja:
@@ -138,6 +140,9 @@ https://git-scm.com/book/en/v2
 
 free ebook:
 https://www.git-tower.com/learn/git/ebook
+
+wypychanie zmian na github:
+https://www.codecademy.com/articles/push-to-github
 
 
 
