@@ -82,7 +82,36 @@ git merge branch_name
   // w gałęziach, trzeba będzie wykasować niechciane zmiany, wszystkie komentarze gita i zapisać plik
 git branch -d branch_name
   // wykasowanie zbędnej już gałęzi
-
+git clone remote_location clone_name
+  // klonowanie cudzego repozytorium (net lub lokalnie)
+  // remote_location - może to być ścieżka dostępu do folderu lub np. adres http
+  // clone_name - nazwa pod, którą chcemy widzieć klona u siebie (utworzy się folder o podanej nazwie)
+git remote add alias url
+  // dodanie repozytorium zdalnego
+  // alias - nazwa, którą chcemy nadać repo
+  // url - pełny adres z którego pobieramy repo
+git remote -v
+  // wyswietla nazwę oryginalnego repo wraz z lokacją
+  // (fetch) - skąd pobrane
+  // (push) - gdzie wypychamy zmiany
+  // wpisanie samego git remote spowoduje wyświetlenie jedynie nazw/y
+  // git remote show origin - bardzo szczegółowy opis repo
+git remote rename repo_name new_name
+  // zmiana nazwy zdalnego repo
+  // Uwaga: zmian nie trzeba zatwierdzać
+git remote rm repo_name
+  // usuwanie zdalnego repozytorium
+  // UWAGA: usunięcia nie trzeba zatwierdzać, enter i krzyżyk na drogę
+git fetch
+  // sprowadzanie zmian z oryginalnego repo, nie aktualizuje lokalnego master
+  // aktualizacje przeprowadza się za pomocą komendy: git merge origin/master
+  // ew. można użyć komendy git pull
+git pull repo_name branch_name
+  // jak git fetch, ale stara się scalić zmiany (możliwość konfliktu)
+git push origin your_branch_name
+git push repo_name branch_name
+  // wypchnięcie zmian do oryginalnego repozytorium
+  // lub innego wraz z podaniem gałęzi
 
 
 cdn.
