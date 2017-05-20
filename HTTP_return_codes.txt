@@ -1,8 +1,60 @@
 
-1** - hold on
-2** - here you go
-3** - go away
-4** - you fucked up
-5** - i fucked up
+1** - hold on (Kody informacyjne)
+2** - here you go (Kody powodzenia)
+3** - go away (Kody przekierowania)
+4** - you fucked up (Kody błędu aplikacji klienta)
+5** - i fucked up (Kody błędu serwera HTTP)
 
-na razie wystarczy, rozwinięcie później
+Uwaga: kod, który potrafi ubić każdy biznes internetowy: 301. Jeśli nie masz absolutnej pewności, że powinien być użyty
+301 to używaj 302.
+  // 301 - Moved Permanently. Trwale przeniesiony – żądany zasób zmienił swój URI i w przyszłości zasób powinien być szukany pod
+  wskazanym nowym adresem.
+  // 302 - Found. Znaleziono – żądany zasób jest chwilowo dostępny pod innym adresem a przyszłe odwołania do zasobu powinny
+  być kierowane pod adres pierwotny.
+
+----------------------------------------------------------------------
+https://pl.wikipedia.org/wiki/Kod_odpowiedzi_HTTP
+----------------------------------------------------------------------
+
+100 - Continue. Kontynuuj - prośba o dalsze wysyłanie zapytania
+101 - Switching Protocols. Zmiana protokołu
+110 - Connection Timed Out. Przekroczono czas połączenia. Serwer zbyt długo nie odpowiada.
+111 - Connection refused. Serwer odrzucił połączenie
+
+200 - OK. Zawartość żądanego dokumentu (najczęściej zwracany nagłówek odpowiedzi w komunikacji WWW Internetu)
+201 - Created. Utworzono – wysłany dokument został zapisany na serwerze
+202 - Accepted. Przyjęto – zapytanie zostało przyjęte do obsłużenia, lecz jego zrealizowanie jeszcze się nie skończyło
+203 - Non-Authoritative Information. Informacja nieautorytatywna – zwrócona informacja nie odpowiada dokładnie odpowiedzi pierwotnego serwera, lecz została utworzona z lokalnych bądź zewnętrznych kopii
+204 - No content. Brak zawartości – serwer zrealizował zapytanie klienta i nie potrzebuje zwracać żadnej treści
+205 - Reset Content. Przywróć zawartość – serwer zrealizował zapytanie i klient powinien przywrócić pierwotny wygląd dokumentu
+206 - Partial Content. Część zawartości – serwer zrealizował tylko część zapytania typu GET, odpowiedź musi zawierać nagłówek Range informujący o zakresie bajtowym zwróconego elementu
+
+300 - Multiple Choices. Wiele możliwości – istnieje więcej niż jeden sposób obsłużenia danego zapytania, serwer może podać adres zasobu, który pozwala na wybór jednoznacznego zapytania spośród możliwych
+301 - Moved Permanently. Trwale przeniesiony – żądany zasób zmienił swój URI i w przyszłości zasób powinien być szukany pod wskazanym nowym adresem
+302 - Found. Znaleziono – żądany zasób jest chwilowo dostępny pod innym adresem a przyszłe odwołania do zasobu powinny być kierowane pod adres pierwotny
+303 - See Other. Zobacz inne – odpowiedź na żądanie znajduje się pod innym URI i tam klient powinien się skierować. To jest właściwy sposób przekierowywania w odpowiedzi na żądanie metodą POST.
+304 - Not Modified. Nie zmieniono – zawartość zasobu nie podległa zmianie według warunku przekazanego przez klienta (np. data ostatniej wersji zasobu pobranej przez klienta – pamięć podręczna przeglądarki)
+305 - Use Proxy. Użyj serwera proxy – do żądanego zasobu trzeba odwołać się przez serwer proxy podany w nagłówku Location odpowiedzi
+306 - Switch Proxy. Kod nieużywany, aczkolwiek zastrzeżony dla starszych wersji protokołu
+307 - Temporary Redirect. Tymczasowe przekierowanie – żądany zasób znajduje się chwilowo pod innym adresem URI, odpowiedź powinna zawierać zmieniony adres zasobu, na który klient zobowiązany jest się przenieść
+310 - Too many redirects. Zbyt wiele przekierowań.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
