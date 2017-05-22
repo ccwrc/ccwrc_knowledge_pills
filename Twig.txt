@@ -1,6 +1,11 @@
 Pełna dokumentacja:
 https://twig.sensiolabs.org/doc/2.x/
 
+
+Dlaczego używać systemu szablonów i dlaczego Twiga?:
+http://www.sitecrafting.com/blog/top-5-php-template-engines/
+
+
 Uwaga: po kazdym rozpoczęciu {{ {% {# i przed zakończeniem musi być spacja.
 {{ wyrażenie }} - wyświetlanie wartości wyrażenia
 {% wyrażenie %} - wykonywanie wyrażeń (warunki logiczne, pętle, bloki, itp.)
