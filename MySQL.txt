@@ -28,6 +28,7 @@ BETWEEN (używany po WHERE)
   // SELECT column_name(s) FROM table_name WHERE column_name BETWEEN value_1 AND value_2;
   // wybierz z tabeli rekordy, które zawierają się pomiędzy wartością1 a wartością2
   // wartościami moga być numery, stringi, daty (BLOB nie przejdzie)
+  // SELECT * FROM movies WHERE name BETWEEN 'A' AND 'J'; // włączając w to A i J...
 COUNT
   // SELECT COUNT(column_name) FROM table_name;
   // zlicza liczbę wierszy w kolumnie, które posiadają wartość (czyli wszystkie oprócz NULL)
@@ -35,6 +36,7 @@ COUNT
   // SELECT COUNT(comment_tweet_id) AS count_comments FROM comment WHERE comment_tweet_id = 2
 CREATE TABLE
   // CREATE TABLE table_name (column_1 datatype, column_2 datatype, column_3 datatype);
+  // CREATE TABLE celebs (id INTEGER NOT NULL AUTO_INCREMENT, name TEXT, age INTEGER);
 DELETE
   // UWAGA: upewnij się, że backup bazy jest zrobiony, zawsze używaj słowa WHERE
   // UWAGA: najpierw przetestuj komendę z SELECT zamiast DELETE, LIMIT 1 też jest przydatne
@@ -43,6 +45,7 @@ DELETE
   // usuń wiersze z tabeli, gdzie spełniony jest warunek
   // DELETE FROM table_name;
   // usuń WSZYSTKIE wiersze z tabeli
+  // DELETE FROM celebs WHERE twitter_handle IS NULL;
 DESC (descending)
   // SELECT * FROM tweet ORDER BY tweet_description DESC LIMIT 300
   // wybierz wszystko, uporządkuj wg. malejąco, max 300 rekordów (alfabetycznie lub liczbowo)
@@ -68,8 +71,11 @@ JOIN // INNER JOIN
 INSERT
   // INSERT INTO table_name (column_1, column_2, column_3) VALUES (value_1, 'value_2', value_3);
   // zwykłe wstawienie nowego wiersza do tabeli
+  // INSERT INTO celebs (name, age) VALUES ('Arnold Bieber', 21);
 LIKE (używany po WHERE)
   // SELECT column_name(s) FROM table_name WHERE column_name LIKE pattern;
+  // SELECT * FROM movies WHERE name LIKE 'Se_en'; // _ (podkreślnik) oznacza tu dowolny znak
+  // SELECT * FROM movies WHERE name LIKE 'a%'; // % oznacza tu dowolną ilość dowolnych znaków
 LIMIT
   // SELECT column_name(s) FROM table_name LIMIT 13;
   // zwróć maksymalnie 13 rekordów
@@ -95,9 +101,11 @@ SELECT
   // SELECT column_name FROM table_name;
   // każde pobieranie danych z bazy zaczyna sie od SELECT
   // SELECT COUNT(message_id) AS new_messages FROM message WHERE receiver_id =1 && read = 0 && receiver_visible = 0;
+  // SELECT * FROM movies WHERE imdb_rating > 8; // inne operatory: =, !=, <, >, <=, >=
 SELECT DISTINCT
   // SELECT DISTINCT column_name FROM table_name;
   // zwaraca unikalne (nie powtarzające się) wartości dla wybranej kolumny
+  // SELECT DISTINCT genre FROM movies;
 SUM
   // SELECT SUM(column_name) FROM table_name;
   // zwraca sumę wartości z wybranej kolumny
@@ -109,7 +117,7 @@ UPDATE
 WHERE
   // SELECT column_name(s) FROM table_name WHERE column_name operator value;
   // wybierz kolumny z tabeli gdzie nazwa jakiś wiersz i tu warunek ->
-  // używane po WHERE: AND, OR, BETWEEN
+  // używane po WHERE: AND, OR, BETWEEN, LIKE, =, != (różne), <, >, <=, >=
 
 cdn. 
 
@@ -129,6 +137,7 @@ kolumny w tabeli:
 - nazwy kolumn tylko małymi literami,
 - nie korzystać z camelCase, znaków specjalnych, ąśę, itp.
 
+UWAGA: jeśli w kolumnie ma być trzymana cena wybierz DECIMAL! Nie stosuj float.
 ----------------------------------------------------
 linki
 
@@ -157,7 +166,9 @@ https://www.miotk.eu/mysql-jak-zaokraglic-liczby-w-bazie-mysql.html#poczatek-str
 podstawy MySQL:
 http://www.bazy-danych.net/
 
-
+----------------------------------------------------
+mini-słownik
+RDBMS - Relational Database Management System 
 
 
 
