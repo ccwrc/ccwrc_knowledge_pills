@@ -144,5 +144,18 @@ https://www.git-tower.com/learn/git/ebook
 wypychanie zmian na github:
 https://www.codecademy.com/articles/push-to-github
 
+! Little Things I Like to Do with Git - 23.05.2017
+https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/
+
+
+
+
+
+
+
+
+
+
+
 
 
