@@ -5,20 +5,25 @@ https://dev.mysql.com/doc/
 ALTER TABLE
   // ALTER TABLE table_name ADD column datatype;
   // zmiana tabeli, np. dodanie kolumny
+  // ALTER TABLE `tweet` CHANGE `tweet_date` `tweet_date` DATETIME NULL DEFAULT NULL;
 AND (używany po WHERE)
   // SELECT column_name(s) FROM table_name WHERE column_1 = value_1 AND column_2 = value_2;
   // wybierz kolumny z tabeli, gdzie warunek1 i warunek2 muszą być spełnione
+  // SELECT * FROM message WHERE message_sender_id = 33 AND message_sender_visible = 0;
   // używany po WHERE, przeciwieństwem jest operator OR (lub)
 AS
   // SELECT column_name AS 'Alias' FROM table_name;
   // wybierz kolumnę jako Alias z tabeli (kolumna jest zwracana pod nową nazwą)
+  // SELECT COUNT(mess_1) AS new_messages FROM message WHERE message_receiver_id =2 && message_read = 0 && message_receiver_visible = 0;
 ASC (ascending)
   // SELECT * FROM tweet ORDER BY tweet_date ASC
   // uporządkuj według -> rosnąco (alfabetycznie lub liczbowo)
   // przeciwieństwem jest DESC
+  // SELECT * FROM tweet ORDER BY tweet_date ASC LIMIT 4;
 AVG (average)
   // SELECT AVG(column_name) FROM table_name;
   // zwraca średnią wartość dla kolumny numerycznej
+  // SELECT AVG(tweet_user_id) FROM tweet;
 BETWEEN (używany po WHERE)
   // SELECT column_name(s) FROM table_name WHERE column_name BETWEEN value_1 AND value_2;
   // wybierz z tabeli rekordy, które zawierają się pomiędzy wartością1 a wartością2
@@ -42,6 +47,7 @@ DESC (descending)
   // SELECT * FROM tweet ORDER BY tweet_description DESC LIMIT 300
   // wybierz wszystko, uporządkuj wg. malejąco, max 300 rekordów (alfabetycznie lub liczbowo)
   // przeciwieństwem jest ASC
+  // SELECT * FROM tweet ORDER BY tweet_author DESC LIMIT 400;
 DROP (UWAGA: komenda niebezpieczna)
   // DROP DATABASE db_name; 
   // DROP TABLE table_name;
@@ -102,7 +108,8 @@ UPDATE
   // jeśli nie użyjesz wyrażenia WHERE zaktualizowane zostaną wszystkie wiersze w tabeli
 WHERE
   // SELECT column_name(s) FROM table_name WHERE column_name operator value;
-  // 
+  // wybierz kolumny z tabeli gdzie nazwa jakiś wiersz i tu warunek ->
+  // używane po WHERE: AND, OR, BETWEEN
 
 cdn. 
 
