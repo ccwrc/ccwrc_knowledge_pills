@@ -10,6 +10,7 @@ AND (używany po WHERE)
   // SELECT column_name(s) FROM table_name WHERE column_1 = value_1 AND column_2 = value_2;
   // wybierz kolumny z tabeli, gdzie warunek1 i warunek2 muszą być spełnione
   // SELECT * FROM message WHERE message_sender_id = 33 AND message_sender_visible = 0;
+  // SELECT * FROM movies WHERE year BETWEEN 1990 AND 2000 AND genre = 'comedy';
   // używany po WHERE, przeciwieństwem jest operator OR (lub)
 AS
   // SELECT column_name AS 'Alias' FROM table_name;
@@ -79,6 +80,7 @@ LIKE (używany po WHERE)
 LIMIT
   // SELECT column_name(s) FROM table_name LIMIT 13;
   // zwróć maksymalnie 13 rekordów
+  // SELECT * FROM movies ORDER BY imdb_rating ASC LIMIT 3;
 MAX
   // SELECT MAX(column_name) FROM table_name;
   // przyjmuje nazwę kolumny jako argument i zwraca największą wartość w tej kolumnie
@@ -88,10 +90,12 @@ MIN
 OR (używany po WHERE)
   // SELECT column_name FROM table_name WHERE column_name = value_1 OR column_name = value_2;
   // wybierz kolumny z tabeli, gdzie spełniony jest warunek1 lub warunek2
+  // SELECT * FROM movies WHERE genre = 'comedy' OR year < 1980;
   // używany po WHERE, przeciwieństwem jest operator AND
 ORDER BY
   // SELECT column_name FROM table_name ORDER BY column_name ASC|DESC;
   // uporządkuj wg. kolumny rosnąco/malejąco
+  // SELECT * FROM movies ORDER BY imdb_rating DESC;
 ROUND
   // SELECT ROUND(column_name, 3) FROM table_name;
   // zaokrąglenie z dokładnością do 3 miejsc po przecinku
