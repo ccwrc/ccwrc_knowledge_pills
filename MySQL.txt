@@ -25,6 +25,7 @@ AVG (average)
   // SELECT AVG(column_name) FROM table_name;
   // zwraca średnią wartość dla kolumny numerycznej
   // SELECT AVG(tweet_user_id) FROM tweet;
+  // SELECT price, AVG(downloads) FROM fake_apps GROUP BY price;
 BETWEEN (używany po WHERE)
   // SELECT column_name(s) FROM table_name WHERE column_name BETWEEN value_1 AND value_2;
   // wybierz z tabeli rekordy, które zawierają się pomiędzy wartością1 a wartością2
@@ -35,9 +36,11 @@ COUNT
   // zlicza liczbę wierszy w kolumnie, które posiadają wartość (czyli wszystkie oprócz NULL)
   // zwraca liczbę całkowitą
   // SELECT COUNT(comment_tweet_id) AS count_comments FROM comment WHERE comment_tweet_id = 2
+  // SELECT COUNT(*) FROM fake_apps;
+  // SELECT price, COUNT(*) FROM fake_apps WHERE downloads > 20000 GROUP BY price;
 CREATE TABLE
   // CREATE TABLE table_name (column_1 datatype, column_2 datatype, column_3 datatype);
-  // CREATE TABLE celebs (id INTEGER NOT NULL AUTO_INCREMENT, name TEXT, age INTEGER);
+  // CREATE TABLE celebs (id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY, name TEXT UNIQUE, age INTEGER);
 DELETE
   // UWAGA: upewnij się, że backup bazy jest zrobiony, zawsze używaj słowa WHERE
   // UWAGA: najpierw przetestuj komendę z SELECT zamiast DELETE, LIMIT 1 też jest przydatne
@@ -84,9 +87,11 @@ LIMIT
 MAX
   // SELECT MAX(column_name) FROM table_name;
   // przyjmuje nazwę kolumny jako argument i zwraca największą wartość w tej kolumnie
+  // SELECT name, category, MAX(downloads) FROM fake_apps GROUP BY category;
 MIN
   // SELECT MIN(column_name) FROM table_name;
   // przyjmuje nazwę kolumny jako argument i zwraca najmniejszą wartość w tej kolumnie
+  // SELECT name, category, MIN(downloads) FROM fake_apps GROUP BY category;
 OR (używany po WHERE)
   // SELECT column_name FROM table_name WHERE column_name = value_1 OR column_name = value_2;
   // wybierz kolumny z tabeli, gdzie spełniony jest warunek1 lub warunek2
@@ -101,11 +106,13 @@ ROUND
   // zaokrąglenie z dokładnością do 3 miejsc po przecinku
   // SELECT ROUND(-5.99549, 2) ->wynik-> -6.00
   // SELECT ROUND(593149, -3) ->wynik-> 593000
+  // SELECT price, ROUND(AVG(downloads), 2) FROM fake_apps GROUP BY price; // zaokrąglenie do 2 miejsc po przecinku
 SELECT
   // SELECT column_name FROM table_name;
   // każde pobieranie danych z bazy zaczyna sie od SELECT
   // SELECT COUNT(message_id) AS new_messages FROM message WHERE receiver_id =1 && read = 0 && receiver_visible = 0;
   // SELECT * FROM movies WHERE imdb_rating > 8; // inne operatory: =, !=, <, >, <=, >=
+  // SELECT albums.name, albums.year, artists.name FROM albums, artists;
 SELECT DISTINCT
   // SELECT DISTINCT column_name FROM table_name;
   // zwaraca unikalne (nie powtarzające się) wartości dla wybranej kolumny
@@ -113,6 +120,7 @@ SELECT DISTINCT
 SUM
   // SELECT SUM(column_name) FROM table_name;
   // zwraca sumę wartości z wybranej kolumny
+  // SELECT category, SUM(downloads) FROM fake_apps GROUP BY category;
 UPDATE
   // UWAGA: upewnij się, że backup bazy jest zrobiony, zawsze używaj słowa WHERE
   // UWAGA: najpierw przetestuj komendę z SELECT zamiast UPDATE
