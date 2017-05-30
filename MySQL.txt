@@ -112,7 +112,7 @@ SELECT
   // każde pobieranie danych z bazy zaczyna sie od SELECT
   // SELECT COUNT(message_id) AS new_messages FROM message WHERE receiver_id =1 && read = 0 && receiver_visible = 0;
   // SELECT * FROM movies WHERE imdb_rating > 8; // inne operatory: =, !=, <, >, <=, >=
-  // SELECT albums.name, albums.year, artists.name FROM albums, artists;
+  // SELECT albums.name, albums.year, artists.name FROM albums, artists; // cross join
 SELECT DISTINCT
   // SELECT DISTINCT column_name FROM table_name;
   // zwaraca unikalne (nie powtarzające się) wartości dla wybranej kolumny
