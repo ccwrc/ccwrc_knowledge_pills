@@ -3,3 +3,39 @@ Instalacja (Linux):
 http://symfony.com/doc/2.8/setup.html
   $ sudo curl -LsS http://symfony.com/installer -o /usr/local/bin/symfony
   $ sudo chmod a+x /usr/local/bin/symfony
+
+Tworzenie nowego projektu:
+  $ symfony new nazwa_projektu
+  opcjonalnie mozna podac wersję Symfony: $ symfony new nazwa_projektu 3.3
+
+Listing poleceń konsoli:
+  $ php app/console
+----------------------------------------------------------------
+najczęściej wykorzystywane polecenia konsoli:
+  $ php app/console server:start - uruchomienie wbudowanego serwera deweloperskiego (standardowo działa na porcie 8000)
+  $ php app/console server:stop - zatrzymanie serwera
+  $ php app/console assets:install - kopiowanie zasobów do katalogu web (pliki, JS, CSS)
+  $ php app/console generate:bundle - generowanie nowego pakietu
+  $ php app/console generate:controller - generowanie kontrolera
+
+
+----------------------------------------------------------------
+przydatne klasy:
+  use Symfony\Component\HttpFoundation\Response - generowanie HTML z akcji
+  use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route - routing
+...
+----------------------------------------------------------------
+usuwanie pakietów:
+  /app/config/routing.yml - kasujemy plik zaczynający się od nazwy bundla
+  /app/AppKernel.php - usuwamy wpis z tablicy $bundles
+  /src/nazwabundla - usuwamy katalog
+----------------------------------------------------------------
+struktura katalogów symfony:
+  app - katalog główny z plikami konfiguracyjnymi i plikami zasobów
+  bin - dane doctrine
+  vendor - wszystko zainstalowane przez composer (nie modyfikować!)
+  src - pakiety (bundle/pluginy), w tym nowo tworzone przez użytkownika
+  web - wszystko wystawione na widok publiczny: front kontroler, JS, CSS, pliki wgrywane przez użytkowników
+  tests - testy:  http://symfony.com/doc/2.8/testing.html
+----------------------------------------------------------------
+
