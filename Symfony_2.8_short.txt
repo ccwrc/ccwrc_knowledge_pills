@@ -13,16 +13,21 @@ Listing poleceń konsoli:
 ----------------------------------------------------------------
 najczęściej wykorzystywane polecenia konsoli:
   $ php app/console server:start - uruchomienie wbudowanego serwera deweloperskiego (standardowo działa na porcie 8000)
-  $ php app/console server:stop - zatrzymanie serwera
+  $ php app/console server:stop - zatrzymanie serwera deweloperskiego
   $ php app/console assets:install - kopiowanie zasobów do katalogu web (pliki, JS, CSS)
   $ php app/console generate:bundle - generowanie nowego pakietu
   $ php app/console generate:controller - generowanie kontrolera
+  $ php app/console debug:router - wylistowanie akcji (kompletny routing)
 
-
+...
 ----------------------------------------------------------------
 przydatne klasy:
   use Symfony\Component\HttpFoundation\Response - generowanie HTML z akcji
   use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route - routing
+  use Symfony\Component\HttpFoundation\Request; - GET, POST, cookies, session
+
+
+
 ...
 ----------------------------------------------------------------
 usuwanie pakietów:
