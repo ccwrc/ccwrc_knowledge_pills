@@ -1,0 +1,13 @@
+
+dokumentacja: http://docs.doctrine-project.org/en/latest/
+strona domowa: http://www.doctrine-project.org/
+github: https://github.com/doctrine/doctrine2
+
+----------------------------------------------------------------
+Podstawowe komendy konsolowe przy współpracy z Symfony LTS (php app/console zamiast php bin/console):
+
+  $ php app/console doctrine:generate:entity - encję należy podlinkować w pliku z kontrolerem 
+    poprzez use my_bundle\Entity\my_entity_class (zgadza się, 2x backslash)
+  $ php app/console doctrine:generate:entities my_bundle - setery, getery, klasa repo, konstruktory relacji, itp.
+  $ php app/console doctrine:schema:update --force -aktualizacja bazy po zmianach w encjach
+
