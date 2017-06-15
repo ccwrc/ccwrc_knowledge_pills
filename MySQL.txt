@@ -16,6 +16,8 @@ AS
   // SELECT column_name AS 'Alias' FROM table_name;
   // wybierz kolumnę jako Alias z tabeli (kolumna jest zwracana pod nową nazwą)
   // SELECT COUNT(mess_1) AS new_messages FROM message WHERE message_receiver_id =2 && message_read = 0 && message_receiver_visible = 0;
+  // SELECT albums.name AS 'Album', albums.year, artists.name AS 'Artist' FROM albums JOIN artists ON albums.artist_id = artists.id
+     WHERE albums.year > 1980;
 ASC (ascending)
   // SELECT * FROM tweet ORDER BY tweet_date ASC
   // uporządkuj według -> rosnąco (alfabetycznie lub liczbowo)
@@ -67,6 +69,7 @@ GROUP BY
 JOIN // INNER JOIN
   // SELECT column_name(s) FROM table_1 JOIN table_2 ON table_1.column_name = table_2.column_name;
   // łaczy wiersze z różnych tabel jeśli warunek jest prawdziwy
+  // SELECT * FROM albums JOIN artists ON albums.artist_id = artists.id;
   OUTER JOIN
   // SELECT column_name(s) FROM table_1 LEFT JOIN table_2 ON table_1.column_name = table_2.column_name;
   // zwrócony jest każdy wiersz z lewej tabeli, jeśli warunek nie jest spełniony to dołączone
@@ -113,6 +116,7 @@ SELECT
   // SELECT COUNT(message_id) AS new_messages FROM message WHERE receiver_id =1 && read = 0 && receiver_visible = 0;
   // SELECT * FROM movies WHERE imdb_rating > 8; // inne operatory: =, !=, <, >, <=, >=
   // SELECT albums.name, albums.year, artists.name FROM albums, artists; // cross join
+  // SELECT * FROM flights WHERE origin in (SELECT code FROM airports WHERE elevation > 2000);
 SELECT DISTINCT
   // SELECT DISTINCT column_name FROM table_name;
   // zwaraca unikalne (nie powtarzające się) wartości dla wybranej kolumny
