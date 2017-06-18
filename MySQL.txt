@@ -40,6 +40,8 @@ COUNT
   // SELECT COUNT(comment_tweet_id) AS count_comments FROM comment WHERE comment_tweet_id = 2
   // SELECT COUNT(*) FROM fake_apps;
   // SELECT price, COUNT(*) FROM fake_apps WHERE downloads > 20000 GROUP BY price;
+  // SELECT origin, id, (SELECT COUNT(*) FROM flights f WHERE f.id < flights.id AND f.origin=flights.origin) + 1
+     AS flight_sequence_number FROM flights;
 CREATE TABLE
   // CREATE TABLE table_name (column_1 datatype, column_2 datatype, column_3 datatype);
   // CREATE TABLE celebs (id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY, name TEXT UNIQUE, age INTEGER);
@@ -66,6 +68,8 @@ DROP (UWAGA: komenda niebezpieczna)
 GROUP BY
   // SELECT COUNT(*) FROM table_name GROUP BY column_name;
   // grupuj według kolumny. Zwraca wiersze wypełnione, identyczne grupuje
+  // SELECT a.dep_month, a.dep_day_of_week, AVG(a.flight_distance) AS average_distance FROM (SELECT dep_month,
+     dep_day_of_week, dep_date, sum(distance) AS flight_distance FROM flights GROUP BY 1,2,3) a GROUP BY 1,2 ORDER BY 1,2;
 JOIN // INNER JOIN
   // SELECT column_name(s) FROM table_1 JOIN table_2 ON table_1.column_name = table_2.column_name;
   // łaczy wiersze z różnych tabel jeśli warunek jest prawdziwy
