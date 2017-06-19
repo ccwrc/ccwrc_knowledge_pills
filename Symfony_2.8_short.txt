@@ -10,6 +10,7 @@ Tworzenie nowego projektu:
 
 Listing poleceń konsoli:
   $ php app/console
+
 ----------------------------------------------------------------
 najczęściej wykorzystywane polecenia konsoli:
   $ php app/console server:start - uruchomienie wbudowanego serwera deweloperskiego (standardowo działa na porcie 8000)
@@ -23,10 +24,19 @@ najczęściej wykorzystywane polecenia konsoli:
 ----------------------------------------------------------------
 przydatne klasy:
   use Symfony\Component\HttpFoundation\Response - generowanie HTML z akcji
+    // ew. JSON http://symfony.com/doc/2.8/components/http_foundation.html#creating-a-json-response
+    // ew. pliki http://symfony.com/doc/2.8/components/http_foundation.html#serving-files
+    // ew. templatki
   use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route - routing
   use Symfony\Component\HttpFoundation\Request; - GET, POST, cookies, session
-
-
+    // newAction(Request $req){} - jeśli jest wykorzystany w akcji to musi byc jako pierwszy
+    // dostęp do GET w akcji: $req->query->get('name');
+    // dostęp do POST: $req->request->get('name');
+    // dostęp do sesji: $session = $req->getSession();
+    // zapis danych do sesji: $session->set('nazwa', 'wartość'); // wczytanie: $session->get('nazwa');
+    // wczytanie danych z sesji z podaniem domyślnej wartości: $session->get('nazwa', "domyślna_wartość");
+  use Symfony\Component\HttpFoundation\Cookie; - zarządzanie ciasteczkami
+    // 
 
 ...
 ----------------------------------------------------------------
@@ -35,7 +45,7 @@ usuwanie pakietów:
   /app/AppKernel.php - usuwamy wpis z tablicy $bundles
   /src/nazwabundla - usuwamy katalog
 ----------------------------------------------------------------
-struktura katalogów symfony:
+główna struktura katalogów symfony:
   app - katalog główny z plikami konfiguracyjnymi i plikami zasobów
   bin - dane doctrine
   vendor - wszystko zainstalowane przez composer (nie modyfikować!)
@@ -43,4 +53,41 @@ struktura katalogów symfony:
   web - wszystko wystawione na widok publiczny: front kontroler, JS, CSS, pliki wgrywane przez użytkowników
   tests - testy:  http://symfony.com/doc/2.8/testing.html
 ----------------------------------------------------------------
+przykłady adnotacji:
+  /**
+   * @Route("/user/")
+   */
+    // jeśli umieści się ścieżkę przed klasą kontrolera to będzie ona dotyczyła wszystkich akcji w kontrolerze
+
+  @Route("/helloWorld", name="hello") // alias hello dla adresu helloWorld
+  @Route("/helloWorld/{wyrazenie}/{wyr2}") // wyrazenie (slug) przekazujemy jako parametr do akcji ($wyrazenie) or . instead /
+  @Route("/post/{slug}/{slug2}", defaults={"slug" = 7, "slug2" = 89}) // slug z wartością domyślną
+  @Route("/hello/{name}", requirements={"name"="\w+"}) // wymagania dla sluga - zastosowanie regex
+  @Method({"GET","POST"}) // przypisanie akcji do dwóch metod http, do jednej: @Method("POST")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
