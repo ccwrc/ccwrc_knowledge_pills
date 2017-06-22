@@ -1,6 +1,6 @@
-Pełna dokumentacja:
-https://twig.sensiolabs.org/doc/2.x/
+Strona główna:  https://twig.sensiolabs.org/
 
+Pełna dokumentacja: https://twig.sensiolabs.org/doc/2.x/
 
 Dlaczego używać systemu szablonów i dlaczego Twiga?:
 http://www.sitecrafting.com/blog/top-5-php-template-engines/
@@ -26,12 +26,12 @@ BundleName:ControllerName:Action - można w widoku wywołać akcje kontrolera
 {{ render(controller('AppBundle:Article:recentArticles', {'max': 3 })) }}
 ---
 {% for key, val in array %} - działa jak foreach w PHP
-{{ key display }} blabla {{ val display }}
+  {{ key display }} blabla {{ val display }}
 {% else %} - else (jeśli nie ma nic w tablicy) w pętli for, super sprawa
 {% endfor %} - zakończenie pętli for
 ---
 {% for post in posts%} - przykład załączenia innego szablonu w pętli for
-{{ include('post/show.html.twig',{ 'post': post})}}
+  {{ include('post/show.html.twig',{ 'post': post})}}
 {% endfor %}
 ---
 {% for x in 1..n %} - przykład pętli for
