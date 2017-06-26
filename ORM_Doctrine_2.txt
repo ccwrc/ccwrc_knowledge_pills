@@ -16,3 +16,18 @@ Przydatne klasy:
   use Doctrine\Common\Collections\ArrayCollection;
     // umożliwia trzymanie relacji do wielu innych obiektów
     // http://www.doctrine-project.org/api/common/2.3/class-Doctrine.Common.Collections.ArrayCollection.html
+
+
+----------------------------------------------------------------
+Relacje pomiędzy encjami:
+  http://doctrine-orm.readthedocs.io/projects/doctrine-orm/en/latest/reference/association-mapping.html
+
+  Wiele do jednego - jednokierunkowa.
+    // encja A wie o jednej przypisanej do siebie encji B, encja B nie wie nic o encjach A (może być przypisana do wielu).
+       class A{
+       /**
+       * @ORM\ManyToOne(targetEntity="B")
+       * @ORM\JoinColumn(name="B_id", referencedColumnName="id")
+       */
+       private $B;
+       } // w encji B nie umieszcza się żadnej dodatkowej adnotacji
