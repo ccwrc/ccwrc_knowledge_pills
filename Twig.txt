@@ -12,7 +12,7 @@ Uwaga: po kazdym rozpoczęciu {{ {% {# i przed zakończeniem musi być spacja.
 {# komentarz #} - blok komentarza
 ----------------------------------------------------------------------------
 
-{{ dump() }} - taki phpowy var_dump()
+{{ dump() }} - taki phpowy var_dump() // https://twig.sensiolabs.org/doc/2.x/functions/dump.html
 {{ _self.getTemplateName() }} - ścieżka widoku (dump ścieżki widoku)
 {% extends "::base.html.twig" %} - przykład dziedziczenia widoku
 {% block title %} Witaj w widoku {% endblock %} - zastapienie (nadpisanie) bloku title
