@@ -8,6 +8,7 @@ http://www.sitecrafting.com/blog/top-5-php-template-engines/
 
 Uwaga: po kazdym rozpoczęciu {{ {% {# i przed zakończeniem musi być spacja.
 {{ wyrażenie }} - wyświetlanie wartości wyrażenia
+  // {{ z }} {{ z.x }} {{ t['key'] }} {{ p.getName() }}
 {% wyrażenie %} - wykonywanie wyrażeń (warunki logiczne, pętle, bloki, itp.)
 {# komentarz #} - blok komentarza
 ----------------------------------------------------------------------------
@@ -53,12 +54,37 @@ return $this->render('hello/greetings/index.html.twig', ['name' => $name]);
 i w funkcji: return ['post' => $post];
 
 
-
-
---------------------------LINKI-------path(),--------url().-------------
+----------------------------------------------------------------------------
+Linkowanie, wstawianie innych szablonów:
+path(), url()
 <a href="{{ path('article_show', {'id': article.id}) }}">tytuł</a>
+<a href="{{ path("ads_ad_showad", {"id":ad.id}) }}">{{ ad.title }}</a>
+<a href="{{ path("ads_comment_deletecomment", {"id":comment.id, "adId":ad.id}) }}">delete</a>
+{% render url('ads_comment_createcomment', {'id': ad.id}) %}
+{{ url('blog_show', { 'slug': 'my-blog-post' }) }}
+
 dynamiczny link:
 <img src="{{ asset("bundles/cl/images/default_user.jpg") }}">
+<img src="{{ asset('images/logo.png') }}" />
+<link href="{{ asset('css/blog.css') }}" rel="stylesheet" type="text/css" />
+
+Wstawianie innego szablonu:
+{% include 'SiteBundle:Helper:pager.html.twig‚ { 'parameters' : { 'count': 10 } } %}
+{% include 'AdsBundle:Ad:ad_menu.html.twig' %} // bez parametrów
+{% include 'AdsBundle:Ad:ad_menu.html.twig', {'id': ad.id} %} // z parametrem
+{% render url('ads_comment_createcomment', {'id': ad.id}) %} // z parametrem
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
