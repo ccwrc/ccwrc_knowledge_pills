@@ -51,6 +51,7 @@ przydatne klasy:
     // tworzenie: $cookie = new Cookie("cookieName", $value, time() + (3600 * 25));
     // zapamiętywanie: $resp = new Response(...); $resp->headers->setCookie($cookie); return $resp;
     // wczytywanie: $cookies = $req->cookies->all(); $cookieValue = $cookies["cookieName"];
+  use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;  // do twiga kiedy używamy adnotacji
 
 ...
 ----------------------------------------------------------------

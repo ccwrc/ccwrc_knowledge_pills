@@ -5,6 +5,7 @@ Pełna dokumentacja: https://twig.sensiolabs.org/doc/2.x/
 Dlaczego używać systemu szablonów i dlaczego Twiga?:
 http://www.sitecrafting.com/blog/top-5-php-template-engines/
 
+Format nazwy plików twig: file_name.html.twig
 
 Uwaga: po kazdym rozpoczęciu {{ {% {# i przed zakończeniem musi być spacja.
 {{ wyrażenie }} - wyświetlanie wartości wyrażenia
@@ -12,13 +13,14 @@ Uwaga: po kazdym rozpoczęciu {{ {% {# i przed zakończeniem musi być spacja.
 {% wyrażenie %} - wykonywanie wyrażeń (warunki logiczne, pętle, bloki, itp.)
 {# komentarz #} - blok komentarza
 ----------------------------------------------------------------------------
+Najczęściej używane:
 
 {{ dump() }} - taki phpowy var_dump() // https://twig.sensiolabs.org/doc/2.x/functions/dump.html
 {{ _self.getTemplateName() }} - ścieżka widoku (dump ścieżki widoku)
 {% extends "::base.html.twig" %} - przykład dziedziczenia widoku
 {% block title %} Witaj w widoku {% endblock %} - zastapienie (nadpisanie) bloku title
 {{ parent() }} - wklejenie treści z bloku szablonu nadrzędnego, np. {% block title %} {{ parent() }} tu nowy tekst {% endblock %}
-{{ foo.bar }} - wyświetlanie atrybutu
+{{ foo.bar }} - wyświetlanie atrybutu (obiekty)
 {{ foo2['bar'] }} - Wyświetlenie zawartości komórki o kluczu bar z tablicy foo2
 {{ var|escape|title }} - można dodawać wiele filtrów do zmiennej var
 {% filter upper %} ten tekst wyświetli się WIELKIMI LITERAMI {% endfilter %}
@@ -48,10 +50,13 @@ BundleName:ControllerName:Action - można w widoku wywołać akcje kontrolera
 
 W akcji kontrolera można na dwa sposoby wskazać, jaki szablon ma być użyty:
 - użyć metody render() należącej do bazowej klasy kontrolera
-return $this->render('hello/greetings/index.html.twig', ['name' => $name]);
+  // return $this->render('hello/greetings/index.html.twig', ['name' => $name]); // app/Resources/views/
+  // $this->render('TruckBundle:Mon:index.html.twig', []); // BundleName:Mon:index.html.twig
 - użyć adnotacji @Template().
-/** @Template("SensioBlogBundle:Post:show.html.twig")
-i w funkcji: return ['post' => $post];
+  /** @Template("SensioBlogBundle:Post:show.html.twig")
+  i w funkcji: return ['post' => $post];
+  tu w kontrolerze musi być uzyte:
+  // use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 
 ----------------------------------------------------------------------------
@@ -73,6 +78,19 @@ Wstawianie innego szablonu:
 {% include 'AdsBundle:Ad:ad_menu.html.twig' %} // bez parametrów
 {% include 'AdsBundle:Ad:ad_menu.html.twig', {'id': ad.id} %} // z parametrem
 {% render url('ads_comment_createcomment', {'id': ad.id}) %} // z parametrem
+
+----------------------------------------------------------------------------
+Filtry:
+
+{{ variable|escape|title }} // każda zmienna może być modyfikowana przez filtr/filtry (nakładane w kolejności)
+
+  {% filter upper %}  // nałożenie filtra na cały blok kodu
+   This text becomes uppercase
+  {% endfilter %}
+
+{{ "now"|date("m/d/Y") }} // wyświetlenie bieżącej daty // "now" - wyrażenie kluczowe
+
+https://twig.sensiolabs.org/doc/2.x/filters/index.html
 
 
 
