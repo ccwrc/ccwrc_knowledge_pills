@@ -47,6 +47,8 @@ git rm file_name
 git rm --cached file_name
   // usunięcie pliku z kontroli wersji, ale z pozostawieniem go na dysku
   // operacja zatwierdzana po commicie (git commit -m "comment")
+git rm --cached -r catalog/filename
+  // usunięcie z kontroli wersji i z repo, działa po wypchnięciu zmian, plik zostaje lokalnie
 git diff filename
   // sprawdzanie różnic w śledzonym pliku
 git mv name1.php new_name.php
