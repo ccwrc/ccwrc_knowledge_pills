@@ -47,6 +47,14 @@ BundleName:ControllerName:Action - można w widoku wywołać akcje kontrolera
     {% endif %}
 {% endfor %}
 ---
+Konstrukcja instrukcji warunkowej:
+{% if v > 1 %} zrób coś
+{% elseif v == 1 %} zrób coś innego
+{% else %} i w każdym pozostałym wypadku
+{% endif %}
+Operatory logiczne możliwe do wykorzystania w instrukcji warunkowej: b-and, b-xor, b-or, or,
+and, ==, !=, <, >, >=, <=, in, matches ({% if variable matches '/RegEx/' %}), starts with, ends with, is, not
+---
 
 W akcji kontrolera można na dwa sposoby wskazać, jaki szablon ma być użyty:
 - użyć metody render() należącej do bazowej klasy kontrolera
@@ -58,7 +66,7 @@ W akcji kontrolera można na dwa sposoby wskazać, jaki szablon ma być użyty:
   tu w kontrolerze musi być uzyte:
   // use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-
+Lista funkcji pomocniczych: https://twig.symfony.com/doc/2.x/functions/index.html
 ----------------------------------------------------------------------------
 Linkowanie, wstawianie innych szablonów:
 path(), url()
@@ -90,7 +98,7 @@ Filtry:
 
 {{ "now"|date("m/d/Y") }} // wyświetlenie bieżącej daty // "now" - wyrażenie kluczowe
 
-https://twig.sensiolabs.org/doc/2.x/filters/index.html
+Lista filtrów: https://twig.sensiolabs.org/doc/2.x/filters/index.html
 
 
 
