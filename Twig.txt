@@ -1,4 +1,5 @@
 Strona główna:  https://twig.sensiolabs.org/
+Szybki przegląd: https://en.wikipedia.org/wiki/Twig_(template_engine)
 
 Pełna dokumentacja: https://twig.sensiolabs.org/doc/2.x/
 
@@ -52,8 +53,8 @@ Konstrukcja instrukcji warunkowej:
 {% elseif v == 1 %} zrób coś innego
 {% else %} i w każdym pozostałym wypadku
 {% endif %}
-Operatory logiczne możliwe do wykorzystania w instrukcji warunkowej: b-and, b-xor, b-or, or,
-and, ==, !=, <, >, >=, <=, in, matches ({% if variable matches '/RegEx/' %}), starts with, ends with, is, not
+Operatory logiczne możliwe do wykorzystania w instrukcji warunkowej: b-and (Boolean and), b-xor (Exclusive or), b-or (Boolean or),
+or, and, ==, !=, <, >, >=, <=, in, matches ({% if variable matches '/RegEx/' %}), starts with, ends with, is, not
 ---
 
 W akcji kontrolera można na dwa sposoby wskazać, jaki szablon ma być użyty:
