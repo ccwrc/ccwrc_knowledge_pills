@@ -186,6 +186,9 @@ https://www.miotk.eu/mysql-jak-zaokraglic-liczby-w-bazie-mysql.html#poczatek-str
 podstawy MySQL:
 http://www.bazy-danych.net/
 
+MySQL poprzez konsolę:
+http://www.nibyblog.pl/podstawy-mysql-w-konsoli-linuxa-4887.html
+
 ----------------------------------------------------
 mini-słownik
 RDBMS - Relational Database Management System 
