@@ -3,8 +3,9 @@ https://dev.mysql.com/doc/
 ----------------------------------------------------
 
 ALTER TABLE
-  // ALTER TABLE table_name ADD column datatype;
-  // zmiana tabeli, np. dodanie kolumny
+  // ALTER TABLE table_name ADD column datatype; //zmiana tabeli - tu dodanie kolumny
+  // ALTER TABLE table_name DROP COLUMN column_name;  // usunięcie kolumny
+  // ALTER TABLE table_name MODIFY COLUMN column_name new_datatype; // modyfikacja
   // ALTER TABLE `tweet` CHANGE `tweet_date` `tweet_date` DATETIME NULL DEFAULT NULL;
 AND (używany po WHERE)
   // SELECT column_name(s) FROM table_name WHERE column_1 = value_1 AND column_2 = value_2;
@@ -45,6 +46,8 @@ COUNT
 CREATE TABLE
   // CREATE TABLE table_name (column_1 datatype, column_2 datatype, column_3 datatype);
   // CREATE TABLE celebs (id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY, name TEXT UNIQUE, age INTEGER);
+CREATE DATABASE
+  // CREATE DATABASE new_database_name;
 DELETE
   // UWAGA: upewnij się, że backup bazy jest zrobiony, zawsze używaj słowa WHERE
   // UWAGA: najpierw przetestuj komendę z SELECT zamiast DELETE, LIMIT 1 też jest przydatne
@@ -59,12 +62,18 @@ DESC (descending)
   // wybierz wszystko, uporządkuj wg. malejąco, max 300 rekordów (alfabetycznie lub liczbowo)
   // przeciwieństwem jest ASC
   // SELECT * FROM tweet ORDER BY tweet_author DESC LIMIT 400;
+DESCRIBE
+  // DESCRIBE table_name;
 DROP (UWAGA: komenda niebezpieczna)
-  // DROP DATABASE db_name; 
-  // DROP TABLE table_name;
-  // usuń bazę, tabelę
+  // DROP DATABASE db_name; // usuń baze danych
+  // DROP TABLE table_name; // usuń tabelę
   // ALTER TABLE table_name DROP INDEX index_name; 
   // usunięcie indeksu tabeli
+EXPLAIN
+EXPLAIN EXTENDED
+  // http://blog.ksiazek.info/2010/04/09/benchmark-i-profiling/
+  // EXPLAIN SELECT first_name, last_name, title FROM film LEFT OUTER JOIN film_actor USING (film_id) LEFT OUTER JOIN...;
+  // EXPLAIN EXTENDED SELECT first_name, last_name, title FROM...;
 GROUP BY
   // SELECT COUNT(*) FROM table_name GROUP BY column_name;
   // grupuj według kolumny. Zwraca wiersze wypełnione, identyczne grupuje
@@ -108,6 +117,9 @@ ORDER BY
   // SELECT column_name FROM table_name ORDER BY column_name ASC|DESC;
   // uporządkuj wg. kolumny rosnąco/malejąco
   // SELECT * FROM movies ORDER BY imdb_rating DESC;
+REGEX
+  // SELECT * FROM pet WHERE name REGEXP '^.{5}$';
+  // SELECT * FROM pet WHERE name REGEXP 'fy$';
 ROUND
   // SELECT ROUND(column_name, 3) FROM table_name;
   // zaokrąglenie z dokładnością do 3 miejsc po przecinku
@@ -187,6 +199,7 @@ podstawy MySQL:
 http://www.bazy-danych.net/
 
 MySQL poprzez konsolę:
+mysql -h hostname -u username -p -D databasename; 
 http://www.nibyblog.pl/podstawy-mysql-w-konsoli-linuxa-4887.html
 
 ----------------------------------------------------
