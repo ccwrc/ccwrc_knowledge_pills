@@ -1,0 +1,4 @@
+
+http://phpmajster.blogspot.com/2015/06/php-dokumentacja-kodu-w-phpdocumentator.html
+
+https://4programmers.net/PHP/Dokumentacja_kodu_PHP#atlink

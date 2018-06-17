@@ -8,9 +8,6 @@ Tworzenie nowego projektu:
   $ symfony new nazwa_projektu
   opcjonalnie mozna podac wersję Symfony: $ symfony new nazwa_projektu 3.3
 
-Listing poleceń konsoli:
-  $ php app/console
-
 ----------------------------------------------------------------
 najczęściej wykorzystywane polecenia konsoli:
   $ php app/console debug:container - pełna lista dostępnych serwisów
@@ -59,26 +56,8 @@ usuwanie pakietów:
   /app/config/routing.yml - kasujemy plik zaczynający się od nazwy bundla
   /app/AppKernel.php - usuwamy wpis z tablicy $bundles
   /src/nazwabundla - usuwamy katalog
-----------------------------------------------------------------
-główna struktura katalogów symfony:
-  app - katalog główny z plikami konfiguracyjnymi i plikami zasobów
-  bin - dane doctrine
-  vendor - wszystko zainstalowane przez composer (nie modyfikować!)
-  src - pakiety (bundle/pluginy), w tym nowo tworzone przez użytkownika
-  web - wszystko wystawione na widok publiczny: front kontroler, JS, CSS, pliki wgrywane przez użytkowników
-  tests - testy:  http://symfony.com/doc/2.8/testing.html
-----------------------------------------------------------------
-przykłady adnotacji:
-  /**
-   * @Route("/user/")
-   */
-    // jeśli umieści się ścieżkę przed klasą kontrolera to będzie ona dotyczyła wszystkich akcji w kontrolerze
 
-  @Route("/helloWorld", name="hello") // alias hello dla adresu helloWorld
-  @Route("/helloWorld/{wyrazenie}/{wyr2}") // wyrazenie (slug) przekazujemy jako parametr do akcji ($wyrazenie) or . instead /
-  @Route("/post/{slug}/{slug2}", defaults={"slug" = 7, "slug2" = 89}) // slug z wartością domyślną
-  @Route("/hello/{name}", requirements={"name"="\w+"}) // wymagania dla sluga - zastosowanie regex
-  @Method({"GET","POST"}) // przypisanie akcji do dwóch metod http, do jednej: @Method("POST")
+
 
 
 
