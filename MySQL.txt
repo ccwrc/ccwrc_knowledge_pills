@@ -64,6 +64,9 @@ DESC (descending)
   // SELECT * FROM tweet ORDER BY tweet_author DESC LIMIT 400;
 DESCRIBE
   // DESCRIBE table_name;
+DISTINCT
+  // używany do zwracania unikalnych wartości (po SELECT)
+  // SELECT DISTINCT tools FROM inventory;
 DROP (UWAGA: komenda niebezpieczna)
   // DROP DATABASE db_name; // usuń baze danych
   // DROP TABLE table_name; // usuń tabelę
