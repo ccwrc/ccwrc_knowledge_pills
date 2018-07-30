@@ -33,7 +33,8 @@ BETWEEN (używany po WHERE)
   // SELECT column_name(s) FROM table_name WHERE column_name BETWEEN value_1 AND value_2;
   // wybierz z tabeli rekordy, które zawierają się pomiędzy wartością1 a wartością2
   // wartościami moga być numery, stringi, daty (BLOB nie przejdzie)
-  // SELECT * FROM movies WHERE name BETWEEN 'A' AND 'J'; // włączając w to A i J...
+  // SELECT * FROM movies WHERE name BETWEEN 'A' AND 'J'; // włączając w to A do J, ale wyłączając J...
+  // dla liczb: druga jest włączana. Dla liter: druga jest wyłączana
 COUNT
   // SELECT COUNT(column_name) FROM table_name;
   // zlicza liczbę wierszy w kolumnie, które posiadają wartość (czyli wszystkie oprócz NULL)
@@ -152,7 +153,8 @@ UPDATE
 WHERE
   // SELECT column_name(s) FROM table_name WHERE column_name operator value;
   // wybierz kolumny z tabeli gdzie nazwa jakiś wiersz i tu warunek ->
-  // używane po WHERE: AND, OR, BETWEEN, LIKE, =, != (różne), <, >, <=, >=
+  // używane po WHERE: AND, OR, BETWEEN, LIKE (podobne wartości), =, != (różne), <, >, <=, >=
+  // IS NULL, IS NOT NULL
 
 cdn. 
 
