@@ -35,6 +35,9 @@ BETWEEN (używany po WHERE)
   // wartościami moga być numery, stringi, daty (BLOB nie przejdzie)
   // SELECT * FROM movies WHERE name BETWEEN 'A' AND 'J'; // włączając w to A do J, ale wyłączając J...
   // dla liczb: druga jest włączana. Dla liter: druga jest wyłączana
+CASE
+  //
+
 COUNT
   // SELECT COUNT(column_name) FROM table_name;
   // zlicza liczbę wierszy w kolumnie, które posiadają wartość (czyli wszystkie oprócz NULL)
@@ -100,7 +103,7 @@ LIKE (używany po WHERE)
   // SELECT column_name(s) FROM table_name WHERE column_name LIKE pattern;
   // SELECT * FROM movies WHERE name LIKE 'Se_en'; // _ (podkreślnik) oznacza tu dowolny znak
   // SELECT * FROM movies WHERE name LIKE 'a%'; // % oznacza tu dowolną ilość dowolnych znaków
-LIMIT
+LIMIT (występuje wyłącznie na samym końcu zapytania)
   // SELECT column_name(s) FROM table_name LIMIT 13;
   // zwróć maksymalnie 13 rekordów
   // SELECT * FROM movies ORDER BY imdb_rating ASC LIMIT 3;
@@ -117,7 +120,7 @@ OR (używany po WHERE)
   // wybierz kolumny z tabeli, gdzie spełniony jest warunek1 lub warunek2
   // SELECT * FROM movies WHERE genre = 'comedy' OR year < 1980;
   // używany po WHERE, przeciwieństwem jest operator AND
-ORDER BY
+ORDER BY (używany po WHERE jeśli WHERE w ogóle występuje)
   // SELECT column_name FROM table_name ORDER BY column_name ASC|DESC;
   // uporządkuj wg. kolumny rosnąco/malejąco
   // SELECT * FROM movies ORDER BY imdb_rating DESC;
