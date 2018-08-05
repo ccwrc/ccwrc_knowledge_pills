@@ -36,8 +36,17 @@ BETWEEN (używany po WHERE)
   // SELECT * FROM movies WHERE name BETWEEN 'A' AND 'J'; // włączając w to A do J, ale wyłączając J...
   // dla liczb: druga jest włączana. Dla liter: druga jest wyłączana
 CASE
-  //
-
+  // występuje przeważnie po SELECT, musi kończyć się poleceniem END
+  // pozwala na wykorzystanie logiki if(WHEN->THEN)-else
+     SELECT name, imdb_rating,
+      CASE
+       WHEN imdb_rating > 8 THEN 'Fantastic'
+       WHEN imdb_rating > 6 THEN 'Poorly Received'
+       WHEN imdb_rating > 5 THEN 'OK...'
+       ELSE 'Avoid at All Costs'
+      END AS 'review'
+     FROM movies;
+  // wynikiem powyższego będą zwrócone kolumny 'name', 'imdb_rating' oraz 'reviev'
 COUNT
   // SELECT COUNT(column_name) FROM table_name;
   // zlicza liczbę wierszy w kolumnie, które posiadają wartość (czyli wszystkie oprócz NULL)
