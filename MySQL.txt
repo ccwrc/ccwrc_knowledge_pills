@@ -96,9 +96,12 @@ GROUP BY
   // SELECT a.dep_month, a.dep_day_of_week, AVG(a.flight_distance) AS average_distance FROM (SELECT dep_month,
      dep_day_of_week, dep_date, sum(distance) AS flight_distance FROM flights GROUP BY 1,2,3) a GROUP BY 1,2 ORDER BY 1,2;
 HAVING
+  // w przeciwieństwie do WHERE HAVING odnosi się do wyniku zapytania (lub do każdej grupy, jeśli mamy grupowanie) a nie jednego rekordu
   // SELECT categories.category_name FROM categories INNER JOIN products ON categories.id = products.category_id
      GROUP BY categories.category_name
-     HAVING AVG(products.price) > 50
+     HAVING AVG(products.price) > 50;
+  // Klauzula WHERE może być używana wraz z poleceniami SELECT, INSERT oraz UPDATE, natomiast HAVING jedynie z poleceniem SELECT
+  // W przypadku, gdy w kwerendzie nie użyto GROUP BY, HAVING ma takie samo zastosowanie jak WHERE
 JOIN // INNER JOIN
   // SELECT column_name(s) FROM table_1 JOIN table_2 ON table_1.column_name = table_2.column_name;
   // łaczy wiersze z różnych tabel jeśli warunek jest prawdziwy
@@ -112,6 +115,7 @@ INSERT
   // INSERT INTO table_name (column_1, column_2, column_3) VALUES (value_1, 'value_2', value_3);
   // zwykłe wstawienie nowego wiersza do tabeli
   // INSERT INTO celebs (name, age) VALUES ('Arnold Bieber', 21);
+  // kopiowanie z tabeli do tabeli: https://skillstest.pl/library/question/68
 LIKE (używany po WHERE)
   // SELECT column_name(s) FROM table_name WHERE column_name LIKE pattern;
   // SELECT * FROM movies WHERE name LIKE 'Se_en'; // _ (podkreślnik) oznacza tu dowolny znak
@@ -161,6 +165,11 @@ SUM
   // SELECT SUM(column_name) FROM table_name;
   // zwraca sumę wartości z wybranej kolumny
   // SELECT category, SUM(downloads) FROM fake_apps GROUP BY category;
+TRUNCATE
+  // TRUNCATE TABLE table_name;
+  // usuwa dane z tabeli. W przeciwieństwie do DELETE jest nieodwracalne (nie działa rollback), szybsze, nie wywołuje triggerów,
+  // resetuje autoincrement, usuwa wszystkie dane bez możliwości filtrowania. Użycie [TABLE] jest opcjonalne.
+  // W przeciwieństwie do DROP sama tabela nie jest usuwana (usuwane są wszystkie wpisy).
 UPDATE
   // UWAGA: upewnij się, że backup bazy jest zrobiony, zawsze używaj słowa WHERE
   // UWAGA: najpierw przetestuj komendę z SELECT zamiast UPDATE
@@ -196,9 +205,14 @@ linki
 
 wszystkie JOINy na jednych schemacie:
 https://images86.fotosik.pl/144/eea5cea03e104bf7.png
+https://skillstest.pl/library/question/4
 
 opis najczęściej używanych komend SQL:
 https://www.codecademy.com/articles/sql-commands?r=master
+
+bardzo rozbudowany tutorial:
+http://www.mysqltutorial.org/
+http://www.mysqltutorial.org/php-mysql/
 
 w3schools:
 https://www.w3schools.com/sql/sql_functions.asp
@@ -222,6 +236,9 @@ http://www.bazy-danych.net/
 MySQL poprzez konsolę:
 mysql -h hostname -u username -p -D databasename; 
 http://www.nibyblog.pl/podstawy-mysql-w-konsoli-linuxa-4887.html
+
+Dobre praktyki w SQL:
+https://skillstest.pl/library/question/69
 
 ----------------------------------------------------
 mini-słownik
