@@ -1,3 +1,5 @@
+mini-FAQ o protokole HTTP: https://www.samouczekprogramisty.pl/protokol-http/#nag%C5%82%C3%B3wki-http
+----------------------------------------------------------------------
 
 1** - hold on (Kody informacyjne)
 2** - here you go (Kody powodzenia)
