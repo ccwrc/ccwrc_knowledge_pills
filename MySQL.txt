@@ -241,8 +241,9 @@ Dobre praktyki w SQL:
 https://skillstest.pl/library/question/69
 
 ----------------------------------------------------
-mini-słownik
-RDBMS - Relational Database Management System 
+     
+Second Order SQL Injection:
+https://sekurak.pl/second-order-sql-injection/
 
 
 
