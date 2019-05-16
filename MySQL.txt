@@ -29,7 +29,7 @@ AVG (average)
   // zwraca średnią wartość dla kolumny numerycznej
   // SELECT AVG(tweet_user_id) FROM tweet;
   // SELECT price, AVG(downloads) FROM fake_apps GROUP BY price;
-BETWEEN (używany po WHERE)
+BETWEEN (używany po WHERE, case-sensitive)
   // SELECT column_name(s) FROM table_name WHERE column_name BETWEEN value_1 AND value_2;
   // wybierz z tabeli rekordy, które zawierają się pomiędzy wartością1 a wartością2
   // wartościami moga być numery, stringi, daty (BLOB nie przejdzie)
