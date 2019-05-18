@@ -46,7 +46,15 @@ CASE
        ELSE 'Avoid at All Costs'
       END AS 'review'
      FROM movies;
-  // wynikiem powyższego będą zwrócone kolumny 'name', 'imdb_rating' oraz 'reviev'
+  // wynikiem powyższego będą zwrócone kolumny 'name', 'imdb_rating' oraz (dodatkowa kolumna) 'reviev'
+     SELECT name,
+      CASE
+       WHEN genre = 'romance' AND year = '2000' THEN 'Chill'
+       WHEN genre = 'comedy' THEN 'Chillout'
+       ELSE 'Intense'
+      END
+     FROM movies;
+  // wynikiem powyższego będzie zwrócona kolumna 'name' oraz kolumna, której nazwą będzie cały warunek CASE
 COUNT
   // SELECT COUNT(column_name) FROM table_name;
   // zlicza liczbę wierszy w kolumnie, które posiadają wartość (czyli wszystkie oprócz NULL)
