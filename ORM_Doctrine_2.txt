@@ -1,5 +1,0 @@
-
-dokumentacja: http://docs.doctrine-project.org/en/latest/
-strona domowa: http://www.doctrine-project.org/
-github: https://github.com/doctrine/doctrine2
-
