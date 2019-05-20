@@ -1,0 +1,29 @@
+
+DRY (Don’t Repeat Yourself)
+Nie powtarzaj się. Wydziel powtarzające się fragmenty kodu np. do funkcji, unikaj stosowania 'magicznych'
+liczb/stringów w kodzie, zamiast tego wykorzystuj stałe.
+
+GRASP (General Responsibility Assignment Software Principles)
+http://www.blog.molitorys.pl/wzorce-projektowe-czyli-zasady-dobrego-programowania
+
+KISS (Keep It Simple, Stupid)
+Bez Udziwnień Zapisu, Idioto (BUZI). Pisz prosto i zrozumiale.
+
+POLA (Principle Of Least Astonishment)
+Zasada najmniejszego zaskoczenia. Element systemu (funkcja, klasa, interfejs, komenda itp.) powinny działać tak, 
+jak naturalnie spodziewałby się tego jego użytkownik.
+
+SCA (Separation of Concerns)
+Żadna klasa naszego programu nie powinna dzielić odpowiedzialności z innymi klasami w naszym programie. 
+Chodzi o to, aby każda klasa miała oddzielne zmartwienia i nie musiała martwić się o zadania klas pobocznych. 
+Wszystkie klasy powinny być zaś rozłączne i osobliwe.
+
+SOLID
+http://www.blog.molitorys.pl/wzorce-projektowe-czyli-zasady-dobrego-programowania
+
+TDA (Tell Don’t Ask)
+Powinniśmy mówić naszym obiektom jakie są ich obowiązki (zadania do wykonania) a nie pytać w jakim są stanie. 
+Zasada ta również pomaga nam unikać niepotrzebnych powiązań pomiędzy obiektami naszych klas.
+
+YAGNI (You Ain’t Gonna Need It)
+Nie potrzebujesz tego teraz, to nie pisz tego teraz. Nie zmuszaj innych do czytania niepotrzebnych rzeczy.
