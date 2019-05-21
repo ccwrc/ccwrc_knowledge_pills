@@ -9,9 +9,18 @@ http://www.blog.molitorys.pl/wzorce-projektowe-czyli-zasady-dobrego-programowani
 KISS (Keep It Simple, Stupid)
 Bez Udziwnień Zapisu, Idioto (BUZI). Pisz prosto i zrozumiale.
 
+LoD (Law of Demeter)
+Nie rozmawiaj z obcymi. Rozmawiaj tylko z przyjaciółmi.Co to znaczy? 
+Metoda obiektu powinna wywoływać metody tylko od: swojego obiektu, argumentu przekazanego do metody, 
+obiektu stworzonego wewnątrz tej metody, bezpośredniego pola obiektu.
+Np. nie powinno się stosować wywołań typu A.getB().getC().getD.getName().
+
 POLA (Principle Of Least Astonishment)
 Zasada najmniejszego zaskoczenia. Element systemu (funkcja, klasa, interfejs, komenda itp.) powinny działać tak, 
 jak naturalnie spodziewałby się tego jego użytkownik.
+
+SLAP (Single Level of Abstraction Principle)
+Każda linia kodu w metodzie powinna mieć ten sam poziom abstrakcji (należy unikać mieszania ze sobą wysoko i niskopoziomowych detali)
 
 SoC (Separation of Concerns)
 Żadna klasa naszego programu nie powinna dzielić odpowiedzialności z innymi klasami w naszym programie. 
@@ -28,6 +37,15 @@ http://itcraftsman.pl/powiedz-nie-pytaj-czyli-prawo-demeter/
 
 Tworzenie nazw
 http://itcraftsman.pl/dobre-praktyki-tworzenia-nazw/
+https://kobietydokodu.pl/niezbednik-juniora-dobre-praktyki-dla-poczatkujacego-programisty/
 
 YAGNI (You Ain’t Gonna Need It)
 Nie potrzebujesz tego teraz, to nie pisz tego teraz. Nie zmuszaj innych do czytania niepotrzebnych rzeczy.
+
+Yoda contitions
+zamiast: if($someVar == 1) {}
+powinno być: if(1 == $someVar) {}
+Dzięki temu nigdy nie przypiszemy wartości 1 zmiennej $someVar w przypadku pomyłki i ustawienia jednego
+znaku '='. Od razu także zostanie zgłoszony błąd, co oszczędza debugowania w przyszłości.
+
+
