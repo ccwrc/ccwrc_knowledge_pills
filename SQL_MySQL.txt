@@ -149,6 +149,9 @@ ORDER BY (używany po WHERE jeśli WHERE w ogóle występuje)
   // SELECT column_name FROM table_name ORDER BY column_name ASC|DESC;
   // uporządkuj wg. kolumny rosnąco/malejąco
   // SELECT * FROM movies ORDER BY imdb_rating DESC;
+  // SELECT category, price, AVG(downloads) FROM apps GROUP BY category, price;
+     krótszy zapis równoznaczny:
+     SELECT category, price, AVG(downloads) FROM apps GROUP BY 1, 2;
 REGEX
   // SELECT * FROM pet WHERE name REGEXP '^.{5}$';
   // SELECT * FROM pet WHERE name REGEXP 'fy$';
