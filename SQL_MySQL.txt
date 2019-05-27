@@ -110,7 +110,8 @@ HAVING
      HAVING AVG(products.price) > 50;
   // Klauzula WHERE może być używana wraz z poleceniami SELECT, INSERT oraz UPDATE, natomiast HAVING jedynie z poleceniem SELECT
   // W przypadku, gdy w kwerendzie nie użyto GROUP BY, HAVING ma takie samo zastosowanie jak WHERE
-JOIN // INNER JOIN
+JOIN 
+  INNER JOIN
   // SELECT column_name(s) FROM table_1 JOIN table_2 ON table_1.column_name = table_2.column_name;
   // łaczy wiersze z różnych tabel jeśli warunek jest prawdziwy
   // SELECT * FROM albums JOIN artists ON albums.artist_id = artists.id;
@@ -119,6 +120,9 @@ JOIN // INNER JOIN
   // zwrócony jest każdy wiersz z lewej tabeli, jeśli warunek nie jest spełniony to dołączone
   // wiersze z prawej są wypełnione NULL. Analogicznie działa RIGHT JOIN
   // Pomoc graficzna: https://images86.fotosik.pl/144/eea5cea03e104bf7.png
+  CROSS JOIN
+  // SELECT month, COUNT(*) FROM newspaper CROSS JOIN months WHERE start_month <= month
+     AND end_month >= month GROUP BY month;
 INSERT
   // INSERT INTO table_name (column_1, column_2, column_3) VALUES (value_1, 'value_2', value_3);
   // zwykłe wstawienie nowego wiersza do tabeli
@@ -181,6 +185,10 @@ TRUNCATE
   // usuwa dane z tabeli. W przeciwieństwie do DELETE jest nieodwracalne (nie działa rollback), szybsze, nie wywołuje triggerów,
   // resetuje autoincrement, usuwa wszystkie dane bez możliwości filtrowania. Użycie [TABLE] jest opcjonalne.
   // W przeciwieństwie do DROP sama tabela nie jest usuwana (usuwane są wszystkie wpisy).
+UNION
+  // SELECT * FROM table1 UNION SELECT * FROM table2;
+    połączenie tabel, warunki: ta sama liczba kolumn, identyczne typy danych w tej samej kolejności
+    tu: wyniki z table1 będą na początku
 UPDATE
   // UWAGA: upewnij się, że backup bazy jest zrobiony, zawsze używaj słowa WHERE
   // UWAGA: najpierw przetestuj komendę z SELECT zamiast UPDATE
@@ -191,8 +199,12 @@ WHERE
   // wybierz kolumny z tabeli gdzie nazwa jakiś wiersz i tu warunek ->
   // używane po WHERE: AND, OR, BETWEEN, LIKE (podobne wartości), =, != (różne), <, >, <=, >=
   // IS NULL, IS NOT NULL
-
-cdn. 
+WITH
+  // pozwala na wykonanie oddzielnego zapytania. Umieszczamy całe pierwsze zapytanie w nawiasach i nadajemy mu alias.
+     Alias wykorzystujemy w dalszej części zapytania tak jakby był tabelą.
+  // WITH query_alias AS (SELECT customer_id, COUNT(subscription_id) AS 'subscriptions' FROM orders
+     GROUP BY customer_id) SELECT customers.customer_name, query_alias.subscriptions FROM customers
+     JOIN query_alias ON query_alias.customer_id = customers.customer_id;
 
 ----------------------------------------------------
 nazewnictwo
