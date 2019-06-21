@@ -96,6 +96,7 @@ DROP (UWAGA: komenda niebezpieczna)
 EXPLAIN
 EXPLAIN EXTENDED
   // http://blog.ksiazek.info/2010/04/09/benchmark-i-profiling/
+  // https://x-coding.pl/blog/developers/mysql-explain-uzywac-czytac/
   // EXPLAIN SELECT first_name, last_name, title FROM film LEFT OUTER JOIN film_actor USING (film_id) LEFT OUTER JOIN...;
   // EXPLAIN EXTENDED SELECT first_name, last_name, title FROM...;
 GROUP BY
