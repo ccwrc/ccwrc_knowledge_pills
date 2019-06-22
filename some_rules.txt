@@ -9,6 +9,9 @@ http://www.blog.molitorys.pl/wzorce-projektowe-czyli-zasady-dobrego-programowani
 KISS (Keep It Simple, Stupid)
 Bez Udziwnień Zapisu, Idioto (BUZI). Pisz prosto i zrozumiale.
 
+Komentowanie kodu - kiedy i jak
+https://x-coding.pl/blog/developers/jak-komentowac-kod/
+
 LoD (Law of Demeter)
 Nie rozmawiaj z obcymi. Rozmawiaj tylko z przyjaciółmi.Co to znaczy? 
 Metoda obiektu powinna wywoływać metody tylko od: swojego obiektu, argumentu przekazanego do metody, 
