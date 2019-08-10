@@ -13,7 +13,7 @@ Komentowanie kodu - kiedy i jak
 https://x-coding.pl/blog/developers/jak-komentowac-kod/
 
 LoD (Law of Demeter)
-Nie rozmawiaj z obcymi. Rozmawiaj tylko z przyjaciółmi.Co to znaczy? 
+Nie rozmawiaj z obcymi. Rozmawiaj tylko z przyjaciółmi. Co to znaczy? 
 Metoda obiektu powinna wywoływać metody tylko od: swojego obiektu, argumentu przekazanego do metody, 
 obiektu stworzonego wewnątrz tej metody, bezpośredniego pola obiektu.
 Nie powinno się np. stosować wywołań typu A.getB().getC().getD.getName().
@@ -41,6 +41,9 @@ http://itcraftsman.pl/powiedz-nie-pytaj-czyli-prawo-demeter/
 Tworzenie nazw
 http://itcraftsman.pl/dobre-praktyki-tworzenia-nazw/
 https://kobietydokodu.pl/niezbednik-juniora-dobre-praktyki-dla-poczatkujacego-programisty/
+
+Worse is Better
+https://pl.wikipedia.org/wiki/Worse_is_Better
 
 YAGNI (You Ain’t Gonna Need It)
 Nie potrzebujesz tego teraz, to nie pisz tego teraz. Nie zmuszaj innych do czytania niepotrzebnych rzeczy.
