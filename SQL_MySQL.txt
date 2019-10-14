@@ -137,6 +137,7 @@ LIMIT (występuje wyłącznie na samym końcu zapytania)
   // SELECT column_name(s) FROM table_name LIMIT 13;
   // zwróć maksymalnie 13 rekordów
   // SELECT * FROM movies ORDER BY imdb_rating ASC LIMIT 3;
+  w innych bazach polecenie może być inne, np. SELECT TOP w SQL Server lub ROWNUM w Oracle
 MAX
   // SELECT MAX(column_name) FROM table_name;
   // przyjmuje nazwę kolumny jako argument i zwraca największą wartość w tej kolumnie
